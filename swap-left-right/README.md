@@ -2,7 +2,7 @@
 
 Extension for KDE’s window manager to add a keyboard shortcut to swap the windows tiled to the left and right halves of the screen.
 
-![swapleftright](screenshot.gif)
+![screenshot](img/screenshot.gif)
 
 [view in KDE Store](https://store.kde.org/p/1617645)
 

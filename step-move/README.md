@@ -4,11 +4,11 @@ Extension for KDE’s window manager adding keyboard shortcuts to stepwise move 
 
 The step sizes and the keyboard shortcuts are configurable.
 
-![screenshot](screenshot.gif)
+![screenshot](img/screenshot.gif)
 
-![config](config.png)
+![config](img/config.png)
 
-![shortcuts](shortcuts.png)
+![shortcuts](img/shortcuts.png)
 
 [view in KDE Store](https://store.kde.org/p/1617645)
 
