@@ -10,7 +10,7 @@ The step sizes and the keyboard shortcuts are configurable.
 
 ![shortcuts](img/shortcuts.png)
 
-[view in KDE Store](https://store.kde.org/p/1617645)
+[view in KDE Store](https://store.kde.org/p/1632260)
 
 
 
