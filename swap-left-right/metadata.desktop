@@ -1,0 +1,16 @@
+# KWin Script Swap Left Right
+# (C) 2021 Natalie Clarius <natalie_clarius@yahoo.de>
+# GNU General Public License v3.0
+
+[Desktop Entry]
+Name=Swap Left and Right
+Comment=Swap the windows tiled to the left and right halves of the screen
+Icon=preferences-system-windows
+Type=Service
+
+X-KDE-ServiceTypes=KWin/Script
+X-Plasma-API=javascript
+X-Plasma-MainScript=code/main.js
+X-KDE-PluginInfo-Author=Natalie Clarius
+X-KDE-PluginInfo-Name=swapleftright
+X-KDE-PluginInfo-Version=1.1

@@ -1,0 +1,24 @@
+# KWin Script Step Resize
+# (C) 2021 Natalie Clarius <natalie_clarius@yahoo.de>
+# GNU General Public License v3.0
+
+[Desktop Entry]
+Name=Step Resize
+Comment=Resize (increase/decrease width/height) the active window one step
+Icon=preferences-system-windows
+
+X-KDE-PluginInfo-Name=stepresize
+X-KDE-PluginInfo-Author=Natalie Clarius
+X-KDE-PluginInfo-Email=natalie_clarius@yahoo.de
+X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-Version=1.0
+
+Type=Service
+X-KDE-ServiceTypes=KWin/Script,KCModule
+X-Plasma-API=javascript
+X-Plasma-MainScript=code/main.js
+
+X-KDE-Library=kwin/effects/configs/kcm_kwin4_genericscripted
+X-KDE-PluginKeyword=stepresize
+X-KDE-ParentComponents=stepresize
+

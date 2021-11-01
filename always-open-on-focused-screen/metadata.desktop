@@ -1,0 +1,19 @@
+# KWin Script Always Open on Focused Screen
+# (C) 2021 Natalie Clarius <natalie_clarius@yahoo.de>
+# GNU General Public License v3.0
+
+[Desktop Entry]
+Name=Always Open on Focused Screen
+Comment=Always opens new windows on the monitor that has the focused window
+Icon=preferences-system-windows
+
+X-KDE-PluginInfo-Author=Natalie Clarius
+X-KDE-PluginInfo-Email=natalie_clarius@yahoo.de
+X-KDE-PluginInfo-Name=alwaysopenfocusedscreen
+X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-License=GPL
+
+Type=Service
+X-KDE-ServiceTypes=KWin/Script
+X-Plasma-API=javascript
+X-Plasma-MainScript=code/main.js
