@@ -5,7 +5,7 @@ Extension for KDE’s window manager adding keyboard shortcuts to stepwise resiz
 - If the window is positioned in the middle of the screen, resize it on both sides evenly.
 - If the window is tiled to a screen edge, resize it on the side facing the mid.
 
-The advantage over the built-in resizing shortcut, which always resizes from the bottom right corner, is that tiled windows remain resizable and will stick to their screen edge; e.g. a window in the bottom right quarter of the screen will be enlarged and reduced from its top left corner, rather than being blocked by or being detached from the bottom and right screen edges.
+The advantage over the built-in pack grow/shrink shortcuts, which alway resizes from the bottom right corner, is that tiled windows remain resizable and will stick to their screen edge; e.g. a window in the bottom right quarter of the screen will be enlarged and reduced from its top left corner, rather than being blocked by or being detached from the bottom and right screen edges.
 
 The step sizes and the keyboard shortcuts are configurable.
 
