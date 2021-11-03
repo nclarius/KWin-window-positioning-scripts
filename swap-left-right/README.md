@@ -4,6 +4,8 @@ Extension for KDE’s window manager to add a keyboard shortcut to swap the wind
 
 ![screenshot](img/screenshot.gif)
 
+![shortcuts](img/shortcuts.png)
+
 [view in KDE Store](https://store.kde.org/p/1617645)
 
 
