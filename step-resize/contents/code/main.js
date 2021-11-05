@@ -20,7 +20,7 @@ config = {
 // initialization
 ///////////////////////
 
-debugMode = true;
+debugMode = false;
 function debug(...args) {if (debugMode) {console.debug(...args);}}
 debug("initializing step resize");
 debug("step resize settings:", "step horizontal:", config.stepHorizontal, "step vertical:", config.stepVertical, "tolerance:", config.tolerance);
@@ -44,14 +44,12 @@ registerShortcut("Step resize decrease vertically"   , "Step Resize Decrease Hei
 
 function incrAreal() {
     // increase horizontally and vertically
-    debug("increase size",  win.caption);
     incrHorizontal();
     incrVertical();
 }
 
 function decrAreal() {
     // decrease horizontally and vertically
-    debug("decrease size",  win.caption);
     decrHorizontal();
     decrVertical();
 }
@@ -59,8 +57,9 @@ function decrAreal() {
 function incrHorizontal() {
     win = workspace.activeClient;
     area = workspace.clientArea(win, win.screen, win.desktop);
-    debug("increase width",  win.caption, win.geometry);
+    debug("increase width", win.caption, win.geometry);
 
+    win.clientStartUserMovedResized(win);
     if (tiledLeft(win, area)) {
         // tiled left: increase to right and leave in place
         debug("tiled left");
@@ -78,6 +77,7 @@ function incrHorizontal() {
         win.geometry.width += config.stepHorizontal;
         win.geometry.x -= config.stepHorizontal/2;
     }
+    win.clientFinishUserMovedResized(win);
 }
 
 function decrHorizontal() {
@@ -85,6 +85,7 @@ function decrHorizontal() {
     area = workspace.clientArea(win, win.screen, win.desktop);
     debug("decrease width",  win.caption, win.geometry);
 
+    win.clientStartUserMovedResized(win);
     if (tiledLeft(win, area)) {
         // tiled left: decrease from right and leave in place
         debug("tiled left");
@@ -102,6 +103,7 @@ function decrHorizontal() {
         win.geometry.width -= config.stepHorizontal;
         win.geometry.x += config.stepHorizontal/2;
     }
+    win.clientFinishUserMovedResized(win);
 }
 
 function incrVertical() {
@@ -109,6 +111,7 @@ function incrVertical() {
     area = workspace.clientArea(win, win.screen, win.desktop);
     debug("increase height",  win.caption, win.geomtry);
 
+    win.clientStartUserMovedResized(win);
     if (tiledTop(win, area)) {
         // tiled top: increase to bottom and leave in place
         debug("tiled top");
@@ -126,6 +129,7 @@ function incrVertical() {
         win.geometry.height += config.stepVertical;
         win.geometry.y -= config.stepVertical/2;
     }
+    win.clientFinishUserMovedResized(win);
 }
 
 function decrVertical() {
@@ -133,6 +137,7 @@ function decrVertical() {
     area = workspace.clientArea(win, win.screen, win.desktop);
     debug("decrease height",  win.caption, win.geometry);
 
+    win.clientStartUserMovedResized(win);
     if (tiledTop(win, area)) {
         // tiled top: decrease from bottom and leave in place
         debug("tiled top");
@@ -150,6 +155,7 @@ function decrVertical() {
         win.geometry.height -= config.stepVertical;
         win.geometry.y += config.stepVertical/2;
     }
+    win.clientFinishUserMovedResized(win);
 }
 
 ///////////////////////
