@@ -19,7 +19,7 @@ config = {
 // initialization
 ///////////////////////
 
-debugMode = false;
+debugMode = true;
 function debug(...args) {if (debugMode) {console.debug(...args);}}
 debug("initializing step move");
 debug("step move settings:", "step horizontal:", config.stepHorizontal, "step vertical:", config.stepVertical);
@@ -40,29 +40,33 @@ registerShortcut("Step move down" , "Step Move Down" , "Alt+C", moveDown );
 ///////////////////////
 
 function moveLeft() {
-    debug("move left", workspace.activeClient.caption);
+    win = workspace.activeClient;
+    debug("move left", win.caption);
     win.clientStartUserMovedResized(win);
-    workspace.activeClient.geometry.x -= config.stepHorizontal;
+    win.geometry.x -= config.stepHorizontal;
     win.clientFinishUserMovedResized(win);
 }
 
 function moveRight() {
-    debug("move right", workspace.activeClient.caption);
+    win = workspace.activeClient;
+    debug("move right", win.caption);
     win.clientStartUserMovedResized(win);
-    workspace.activeClient.geometry.x += config.stepHorizontal;
+    win.geometry.x += config.stepHorizontal;
     win.clientFinishUserMovedResized(win);
 }
 
 function moveUp() {
-    debug("move up", workspace.activeClient.caption);
+    win = workspace.activeClient;
+    debug("move up", win.caption);
     win.clientStartUserMovedResized(win);
-    workspace.activeClient.geometry.y -= config.stepVertical;
+    win.geometry.y -= config.stepVertical;
     win.clientFinishUserMovedResized(win);
 }
 
 function moveDown() {
-    debug("move down", workspace.activeClient.caption);
+    win = workspace.activeClient;
+    debug("move down", win.caption);
     win.clientStartUserMovedResized(win);
-    workspace.activeClient.geometry.y += config.stepVertical;
+    win.geometry.y += config.stepVertical;
     win.clientFinishUserMovedResized(win);
 }

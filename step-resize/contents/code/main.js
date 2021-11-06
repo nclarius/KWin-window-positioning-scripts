@@ -20,7 +20,7 @@ config = {
 // initialization
 ///////////////////////
 
-debugMode = false;
+debugMode = true;
 function debug(...args) {if (debugMode) {console.debug(...args);}}
 debug("initializing step resize");
 debug("step resize settings:", "step horizontal:", config.stepHorizontal, "step vertical:", config.stepVertical, "tolerance:", config.tolerance);

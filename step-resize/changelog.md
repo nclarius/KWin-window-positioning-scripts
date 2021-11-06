@@ -1,7 +1,7 @@
-### v1.1
+## v1.1
 
 - better compatibility with other KWin scripts
 
-## v1.0
+# v1.0
 
 - initial release
