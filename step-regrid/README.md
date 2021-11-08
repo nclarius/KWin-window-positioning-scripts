@@ -16,7 +16,7 @@ Whether to resize only the active window, all visible or all present windows, as
 
 ![shortcuts](img/shortcuts.png)
 
-[view in KDE Store](https://store.kde.org/p/1632260)
+[view in KDE Store](https://www.pling.com/p/1636998/)
 
 
 
