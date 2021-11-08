@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
  <class>KWin::StepResizeConfigForm</class>
- <widget class="QWidget" name="KWin::ResizeStepConfigForm">
+ <widget class="QWidget" name="KWin::StepResizeConfigForm">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>279</width>
-    <height>202</height>
+    <width>253</width>
+    <height>269</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -69,27 +69,23 @@
       <string>Tiles</string>
      </property>
      <layout class="QGridLayout" name="gridLayout_2">
-      <item row="0" column="0">
-       <widget class="QLabel" name="tolerance">
-        <property name="text">
-         <string>Tolerance</string>
+      <item row="0" column="1">
+       <widget class="QSpinBox" name="kcfg_tolerance">
+        <property name="suffix">
+         <string> px</string>
+        </property>
+        <property name="value">
+         <number>0</number>
         </property>
        </widget>
       </item>
-       <item row="0" column="1">
-        <widget class="QSpinBox" name="kcfg_tolerance">
-         <property name="suffix">
-          <string> px</string>
-         </property>
-         <property name="value">
-          <number>0</number>
-         </property>
-        </widget>
-       </item>
-      <item row="1" column="0">
-       <widget class="QLabel" name="toleranceInfo">
+      <item row="0" column="0">
+       <widget class="QLabel" name="tolerance">
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;(Windows up to this  &lt;br/&gt;far from the screen &lt;br/&gt;edge will be resized &lt;br/&gt;on the mid side)&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tolerance&lt;br/&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Windows up to this far from the screen edges will be resized on the mid side&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+        </property>
+        <property name="wordWrap">
+         <bool>true</bool>
         </property>
        </widget>
       </item>

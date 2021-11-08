@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
   <class>KWin::StepMoveConfigForm</class>
-  <widget class="QWidget" name="KWin::MoveStepConfigForm">
+  <widget class="QWidget" name="KWin::StepMoveConfigForm">
     <property name="geometry">
       <rect>
         <x>0</x>

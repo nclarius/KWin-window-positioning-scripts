@@ -29,10 +29,10 @@ debug("step move settings:", "step horizontal:", config.stepHorizontal, "step ve
 // register shortcuts
 ///////////////////////
 
-registerShortcut("Step move left" , "Step Move Left" , "Alt+S", moveLeft );
-registerShortcut("Step move right", "Step Move Right", "Alt+F", moveRight);
-registerShortcut("Step move up"   , "Step Move Up"   , "Alt+E", moveUp   );
-registerShortcut("Step move down" , "Step Move Down" , "Alt+C", moveDown );
+registerShortcut("Step move: left" , "Step Move: Left" , "Alt+S", moveLeft );
+registerShortcut("Step move: right", "Step Move: Right", "Alt+F", moveRight);
+registerShortcut("Step move: up"   , "Step Move: Up"   , "Alt+E", moveUp   );
+registerShortcut("Step move: down" , "Step Move: Down" , "Alt+C", moveDown );
 
 
 ///////////////////////

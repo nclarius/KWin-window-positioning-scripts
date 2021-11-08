@@ -10,9 +10,9 @@ GNU General Public License v3.0
 ///////////////////////
 
 config = {
-    stepHorizontal: readConfig("stepHorizontal", 50),
-    stepVertical:   readConfig("stepVertical"  , 50),
-    tolerance:      readConfig("tolerance"     , 0)
+    stepHor: readConfig("stepHor", 50),
+    stepVer: readConfig("stepVer", 50),
+    tolerance: readConfig("tolerance", 0)
 };
 
 
@@ -23,38 +23,38 @@ config = {
 debugMode = true;
 function debug(...args) {if (debugMode) {console.debug(...args);}}
 debug("initializing step resize");
-debug("step resize settings:", "step horizontal:", config.stepHorizontal, "step vertical:", config.stepVertical, "tolerance:", config.tolerance);
+debug("step resize settings:", "step horizontal:", config.stepHor, "step verticla:", config.stepVer, "tolerance:", config.tolerance);
 
 
 ///////////////////////
 // register shortcuts
 ///////////////////////
 
-registerShortcut("Step resize increase areally"      , "Step Resize Increase Size", "Alt+O", incrAreal     );
-registerShortcut("Step resize decrease araelly"      , "Step Resize Decrease Size", "Alt+M", decrAreal     );
-registerShortcut("Step resize increase horizontally" , "Step Resize Increase Width" , "Alt+L", incrHorizontal);
-registerShortcut("Step resize decrease horizontally" , "Step Resize Decrease Width" , "Alt+J", decrHorizontal);
-registerShortcut("Step resize increase vertically"   , "Step Resize Increase Height", "Alt+I", incrVertical  );
-registerShortcut("Step resize decrease vertically"   , "Step Resize Decrease Height", "Alt+,", decrVertical  );
+registerShortcut("Step resize: grow size"    , "Step Resize: Grow Size"    , "Alt+O", incrAr);
+registerShortcut("Step resize: shrink size"  , "Step Resize: Shrink Size"  , "Alt+M", decrAr);
+registerShortcut("Step resize: grow width"   , "Step Resize: Grow Width"   , "Alt+L", incrHor);
+registerShortcut("Step resize: shrink width" , "Step Resize: Shrink Width" , "Alt+J", decrHor);
+registerShortcut("Step resize: grow height"  , "Step Resize: Grow Height"  , "Alt+I", incrVer);
+registerShortcut("Step resize: shrink height", "Step Resize: Shrink Height", "Alt+,", decrVer);
 
 
 ///////////////////////
 // resize window
 ///////////////////////
 
-function incrAreal() {
-    // increase horizontally and vertically
-    incrHorizontal();
-    incrVertical();
+function incrAr() {
+    // Grow horizontally and vertically
+    incrHor();
+    incrVer();
 }
 
-function decrAreal() {
-    // decrease horizontally and vertically
-    decrHorizontal();
-    decrVertical();
+function decrAr() {
+    // Shrink horizontally and vertically
+    decrHor();
+    decrVer();
 }
 
-function incrHorizontal() {
+function incrHor() {
     win = workspace.activeClient;
     area = workspace.clientArea(win, win.screen, win.desktop);
     debug("increase width", win.caption, win.geometry);
@@ -63,24 +63,24 @@ function incrHorizontal() {
     if (tiledLeft(win, area)) {
         // tiled left: increase to right and leave in place
         debug("tiled left");
-        win.geometry.width += config.stepHorizontal;
+        win.geometry.width += config.stepHor;
     }
     else if (tiledRight(win, area)) {
         // tiled right: increase to right and move to left
         debug("tiled right");
-        win.geometry.width += config.stepHorizontal;
-        win.geometry.x -= config.stepHorizontal;
+        win.geometry.width += config.stepHor;
+        win.geometry.x -= config.stepHor;
     }
     else {
         // not tiled: increase to right and move half to left
         debug("tiled non-horizontal");
-        win.geometry.width += config.stepHorizontal;
-        win.geometry.x -= config.stepHorizontal/2;
+        win.geometry.width += config.stepHor;
+        win.geometry.x -= config.stepHor/2;
     }
     win.clientFinishUserMovedResized(win);
 }
 
-function decrHorizontal() {
+function decrHor() {
     win = workspace.activeClient;
     area = workspace.clientArea(win, win.screen, win.desktop);
     debug("decrease width",  win.caption, win.geometry);
@@ -89,24 +89,24 @@ function decrHorizontal() {
     if (tiledLeft(win, area)) {
         // tiled left: decrease from right and leave in place
         debug("tiled left");
-        win.geometry.width -= config.stepHorizontal;
+        win.geometry.width -= config.stepHor;
     }
     else if (tiledRight(win, area)) {
         // tiled right: decrease from right and move to right
         debug("tiled right");
-        win.geometry.width -= config.stepHorizontal;
-        win.geometry.x += config.stepHorizontal;
+        win.geometry.width -= config.stepHor;
+        win.geometry.x += config.stepHor;
     }
     else {
         // not tiled: decrease from right and move half to right
         debug("tiled non-horizontal");
-        win.geometry.width -= config.stepHorizontal;
-        win.geometry.x += config.stepHorizontal/2;
+        win.geometry.width -= config.stepHor;
+        win.geometry.x += config.stepHor/2;
     }
     win.clientFinishUserMovedResized(win);
 }
 
-function incrVertical() {
+function incrVer() {
     win = workspace.activeClient;
     area = workspace.clientArea(win, win.screen, win.desktop);
     debug("increase height",  win.caption, win.geomtry);
@@ -115,24 +115,24 @@ function incrVertical() {
     if (tiledTop(win, area)) {
         // tiled top: increase to bottom and leave in place
         debug("tiled top");
-        win.geometry.height += config.stepVertical;
+        win.geometry.height += config.stepVer;
     }
     else if (tiledBottom(win, area)) {
         // tiled bottom: increase to bottom and move to top
         debug("tiled bottom");
-        win.geometry.height += config.stepVertical;
-        win.geometry.y -= config.stepVertical;
+        win.geometry.height += config.stepVer;
+        win.geometry.y -= config.stepVer;
     }
     else {
         // not tiled: increase to bottom and move half to top
         debug("tiled non-vertical");
-        win.geometry.height += config.stepVertical;
-        win.geometry.y -= config.stepVertical/2;
+        win.geometry.height += config.stepVer;
+        win.geometry.y -= config.stepVer/2;
     }
     win.clientFinishUserMovedResized(win);
 }
 
-function decrVertical() {
+function decrVer() {
     win = workspace.activeClient;
     area = workspace.clientArea(win, win.screen, win.desktop);
     debug("decrease height",  win.caption, win.geometry);
@@ -141,19 +141,19 @@ function decrVertical() {
     if (tiledTop(win, area)) {
         // tiled top: decrease from bottom and leave in place
         debug("tiled top");
-        win.geometry.height -= config.stepVertical;
+        win.geometry.height -= config.stepVer;
     }
     else if (tiledBottom(win, area)) {
         // tiled bottom: decrease from bottom and move to bottom
         debug("tiled bottom");
-        win.geometry.height -= config.stepVertical;
-        win.geometry.y += config.stepVertical;
+        win.geometry.height -= config.stepVer;
+        win.geometry.y += config.stepVer;
     }
     else {
         // not tiled: decrease from bottom and move half to bottom
         debug("tiled non-vertical");
-        win.geometry.height -= config.stepVertical;
-        win.geometry.y += config.stepVertical/2;
+        win.geometry.height -= config.stepVer;
+        win.geometry.y += config.stepVer/2;
     }
     win.clientFinishUserMovedResized(win);
 }
