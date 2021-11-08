@@ -32,7 +32,7 @@ qdbus org.kde.KWin /KWin reconfigure
 
 ## Set-up
 
-- In order for the script to work, you need to have enabled *System Settings* > *Window Management* > *Window Behavior* > *Focus* > *Active screen follows mouse.*
+- In order for the script to work, you need to have *System Settings* > *Window Management* > *Window Behavior* > *Focus* > *Active screen follows mouse* set to enabled.
 
 
 
