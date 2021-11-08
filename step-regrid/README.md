@@ -8,7 +8,7 @@ Extension for KDE’s window manager adding keyboard shortcuts to stepwise resha
   - windows in the middle: move right
 - analogous for leftwards/upwards/downwards.
 
-Whether to resize only the active window, all visible or all present windows, as well as the step sizes and the keyboard shortcuts are configurable.
+Whether to resize only the active window or all present windows, as well as the step sizes and the keyboard shortcuts are configurable.
 
 ![screenshot](img/screenshot.gif)
 
