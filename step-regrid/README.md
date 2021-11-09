@@ -73,6 +73,12 @@ leftwards  Alt+J               Alt+L  rightwards
 
 
 
+## Issues
+
+If windows are being moved rather than resized, increase the tolerance in order to liberalize tiling detection.
+
+
+
 ## Small Print
 
 © 2021 Natalie Clarius \<natalie_clarius@yahoo.de\>
