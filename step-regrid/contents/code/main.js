@@ -47,7 +47,7 @@ function shiftRight() {
     debug("regrid rightwards");
     active = workspace.activeClient;
     area = workspace.clientArea(active, active.screen, active.desktop);
-    wins = getClients(area);
+    wins = config.resizeOthers ? getClients(area) : [active];
     for (var i = 0; i < wins.length; i++) {
         win = wins[i];
         win.clientStartUserMovedResized(win);
