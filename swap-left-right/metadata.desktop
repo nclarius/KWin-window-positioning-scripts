@@ -6,11 +6,18 @@
 Name=Swap Left and Right
 Comment=Swap the windows tiled to the left and right halves of the screen
 Icon=preferences-system-windows
-Type=Service
 
-X-KDE-ServiceTypes=KWin/Script
+X-KDE-PluginInfo-Author=Natalie Clarius
+X-KDE-PluginInfo-Email=natalie_clarius@yahoo.de
+X-KDE-PluginInfo-Name=swapleftright
+X-KDE-PluginInfo-Version=2.0
+X-KDE-PluginInfo-License=GPL
+
+Type=Service
+X-KDE-ServiceTypes=KWin/Script,KCModule
 X-Plasma-API=javascript
 X-Plasma-MainScript=code/main.js
-X-KDE-PluginInfo-Author=Natalie Clarius
-X-KDE-PluginInfo-Name=swapleftright
-X-KDE-PluginInfo-Version=1.1
+
+X-KDE-Library=kwin/effects/configs/kcm_kwin4_genericscripted
+X-KDE-PluginKeyword=swapleftright
+X-KDE-ParentComponents=swapleftright

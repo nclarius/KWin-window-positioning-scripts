@@ -1,6 +1,6 @@
 # Step Move
 
-Extension for KDE’s window manager adding keyboard shortcuts to stepwise move (left/right/top/bottom) windows.
+Extension for KDE’s window manager adding keyboard shortcuts to stepwise move (left/right/top/bottom/center) windows.
 
 The step sizes and the keyboard shortcuts are configurable.
 
@@ -58,11 +58,14 @@ ln -sf ~/.local/share/kwin/scripts/stepmove/metadata.desktop ~/.local/share/kser
 The default shortcuts are:
 
 ```
-                 top    
-                Alt+E        
-left  Alt+S               Alt+F  right     
-                Alt+C
-               bottom
+           top
+          Alt+E
+                
+ left     center     right
+Alt+S     Alt+D      Alt+F
+    
+          bottom
+          Alt+C
 ```
 
 

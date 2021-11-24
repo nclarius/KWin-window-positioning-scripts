@@ -11,7 +11,7 @@ X-KDE-PluginInfo-Name=stepmove
 X-KDE-PluginInfo-Author=Natalie Clarius
 X-KDE-PluginInfo-Email=natalie_clarius@yahoo.de
 X-KDE-PluginInfo-License=GPL
-X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Version=1.2
 
 Type=Service
 X-KDE-ServiceTypes=KWin/Script,KCModule

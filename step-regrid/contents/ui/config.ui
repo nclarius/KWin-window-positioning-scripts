@@ -128,7 +128,7 @@
       <item>
        <widget class="QLabel" name="tolerance">
         <property name="text">
-         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tolerance&lt;br/&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Windows up to this far from the screen edges will be resized on the mid side&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Tolerance&lt;br/&gt;&lt;span style=&quot; font-size:8pt;&quot;&gt;Windows up to this far from the screen edges will be resized on the inwards facing sides&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
         </property>
         <property name="wordWrap">
          <bool>true</bool>

@@ -11,66 +11,51 @@ registerShortcut("Swap left and right", "Swap Left and Right", "Meta+Shift+Right
 function swapLeftRight() {
     console.debug("swap left and right");
 
-    // get active window
-    var active = workspace.activeClient;
-    if (active == null) {
-        return;
-    }
-    var win1 = active;
-
     // get area geometry
+    var active = workspace.activeClient;
+    if (active == undefined) return;
     var area = workspace.clientArea(active, active.screen, active.desktop);
-    var leftHalf = {
-        x: area.x,
-        y: area.y,
-        width: area.width/2,
-        height: area.height
-    };
-    var rightHalf = {
-        x: area.x + area.width/2,
-        y: area.y,
-        width: area.width/2,
-        height: area.height
+    var grid = {
+        left: area.x,
+        midH: area.x + area.width/2,
+        halfWidth: area.width/2
     };
 
-    // try swapping the halves
-    if (swapHalves(leftHalf, rightHalf)) return;
-    if (swapHalves(rightHalf, leftHalf)) return;
+    // get halves to swap
+    // left windows
+    var left = workspace.clientList().filter(win =>
+        relevant(win, active) &&
+        near(win.x, grid.left) && near(win.width, grid.halfWidth));
+    // right windows
+    var right = workspace.clientList().filter(win =>
+        relevant(win, active) &&
+        near(win.x, grid.midH) && near(win.width, grid.halfWidth));
 
-    function swapHalves(half1, half2) {
-        // check if active window is on one half
-        if (near(win1.geometry, half1)) {
-            // find window on other half
-            var clients = workspace.clientList().reverse();
-            for (var i = 0; i < clients.length; i++) {
-                win2 = clients[i];
-                // other window is on other half
-                if (relevant(win1, win2) && near(win2.geometry, half2)) {
-                    // swap halves and unminimize
-                    win1.geometry = half2;
-                    win2.geometry = half1;
-                    win1.minimized = false;
-                    win2.minimized = false;
-                    return true;
-                }
-            }
-        }
+    // swap halves
+    // move left windows to right
+    for (const win of left) {
+        win.geometry.x = grid.midH;
+        win.minimized = false;
     }
+    // move right windows to left
+    for (const win of right) {
+        win.geometry.x = grid.left;
+        win.minimized = false;
+    }
+
 
     // helper functions
 
-    // window is considered near an area iff the difference on all coordinates is within tolerance
+    // window is considered near an area iff the difference of the coordinates is within tolerance
     function near(actual, expected) {
-        return Object.keys(expected).every(coord =>
-            Math.abs(actual[coord] - expected[coord]) <= 0.02 * area.width);
+        return Math.abs(actual - expected) <= 0.02 * area.width;
     }
 
     // window is relevant iff it is not identical, unminimized, on the same desktop and screen, and resizable
-    function relevant(win1, win2) {
-        return win2 != win1
-            && !win2.minimized
-            && (win2.desktop == win1.desktop || win2.desktop == -1 || win1.desktop == -1)
-            && win2.screen == win1.screen
-            && win2.resizeable;
+    function relevant(win, active) {
+        return !win.minimized
+            && (win.desktop == active.desktop || win.onAllDesktops)
+            && win.screen == active.screen
+            && win.resizeable;
     }
 }

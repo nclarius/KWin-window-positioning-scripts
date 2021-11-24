@@ -29,15 +29,26 @@ debug("step move settings:", "step horizontal:", config.stepHorizontal, "step ve
 // register shortcuts
 ///////////////////////
 
-registerShortcut("Step move: left" , "Step Move: Left" , "Alt+S", moveLeft );
-registerShortcut("Step move: right", "Step Move: Right", "Alt+F", moveRight);
-registerShortcut("Step move: up"   , "Step Move: Up"   , "Alt+E", moveUp   );
-registerShortcut("Step move: down" , "Step Move: Down" , "Alt+C", moveDown );
+registerShortcut("Step move: center", "Step Move: Center", "Alt+D", moveCenter);
+registerShortcut("Step move: left"  , "Step Move: Left"  , "Alt+S", moveLeft  );
+registerShortcut("Step move: right" , "Step Move: Right" , "Alt+F", moveRight );
+registerShortcut("Step move: up"    , "Step Move: Up"    , "Alt+E", moveUp    );
+registerShortcut("Step move: down"  , "Step Move: Down"  , "Alt+C", moveDown  );
 
 
 ///////////////////////
 // move window
-///////////////////////
+//////////////////////////////////////////////
+
+function moveCenter() {
+    win = workspace.activeClient;
+    area = workspace.clientArea(win, win.screen, win.desktop);
+    debug("move center", win.caption);
+    win.clientStartUserMovedResized(win);
+    win.geometry.x = area.x + area.width/2 - win.width/2;
+    win.geometry.y = area.y + area.height/2 - win.height/2;
+    win.clientFinishUserMovedResized(win);
+}
 
 function moveLeft() {
     win = workspace.activeClient;

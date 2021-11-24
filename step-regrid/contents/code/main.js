@@ -33,6 +33,7 @@ debug("step re-grid filters:", "resize others:", config.resizeOthers, "resize mi
 // register shortcuts
 ///////////////////////
 
+registerShortcut("Step regrid: shift center"    , "Step Regrid: Shift Center"    , "Alt+K", shiftCenter);
 registerShortcut("Step regrid: shift rightwards", "Step Regrid: Shift Rightwards", "Alt+L", shiftRight);
 registerShortcut("Step regrid: shift leftwards" , "Step Regrid: Shift Leftwards" , "Alt+J", shiftLeft);
 registerShortcut("Step regrid: shift downwards" , "Step Regrid: Shift Downwards" , "Alt+,", shiftDown);
@@ -43,6 +44,45 @@ registerShortcut("Step regrid: shift upwards"   , "Step Regrid: Shift Upwards"  
 // regrid windows
 ///////////////////////
 
+function shiftCenter() {
+    debug("regrid center");
+    active = workspace.activeClient;
+    area = workspace.clientArea(active, active.screen, active.desktop);
+    wins = config.resizeOthers ? getClients(area) : [active];
+    for (var i = 0; i < wins.length; i++) {
+        win = wins[i];
+        if (!tiledWidth(win, area)) {
+            // tiled to left/right: set to half width
+            win.clientStartUserMovedResized(win);
+            if (tiledLeft(win, area)) {
+                win.gemetry.x = area.x;
+                win.geometry.width = area.width/2;
+            }
+            else if (tiledRight(win, area)) {
+                win.geometry.x = area.x + area.width/2;
+                win.geometry.width = area.width/2;
+            }
+            else {
+            }
+            win.clientFinishUserMovedResized(win);
+        };
+        if (!tiledHeight(win, area)) {
+            // tiled to top/bottom: set to half height
+            win.clientStartUserMovedResized(win);
+            if (tiledTop(win, area)) {
+                win.geometry.y = area.y;
+                win.geometry.height = area.height/2;
+            }
+            else if (tiledBottom(win, area)) {
+                win.geometry.y = area.y + area.height/2;
+                win.geometry.height = area.height/2;
+            }
+            else {
+            }
+            win.clientFinishUserMovedResized(win);
+        }
+    }
+}
 
 function shiftRight() {
     debug("regrid rightwards");
