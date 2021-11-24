@@ -1,6 +1,6 @@
 # Step Re-Grid
 
-Extension for KDE’s window manager adding keyboard shortcuts to stepwise reshape the window grid, that is, resize the active or all windows from the center axes depending of their position:
+Extension for KDE’s window manager adding keyboard shortcuts to stepwise reshape the window grid, that is, resize the active or all windows from the center axes depending on their position:
 
 - shift rightwards:
   - windows at the left screen edge: grow to right
