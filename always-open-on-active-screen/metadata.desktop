@@ -10,10 +10,14 @@ Icon=preferences-system-windows
 X-KDE-PluginInfo-Author=Natalie Clarius
 X-KDE-PluginInfo-Email=natalie_clarius@yahoo.de
 X-KDE-PluginInfo-Name=alwaysopenonactivescreen
-X-KDE-PluginInfo-Version=1.0
+X-KDE-PluginInfo-Version=2.0
 X-KDE-PluginInfo-License=GPL
 
 Type=Service
-X-KDE-ServiceTypes=KWin/Script
+X-KDE-ServiceTypes=KWin/Script,KCModule
 X-Plasma-API=javascript
 X-Plasma-MainScript=code/main.js
+
+X-KDE-Library=kwin/effects/configs/kcm_kwin4_genericscripted
+X-KDE-PluginKeyword=alwaysopenonactivescreen
+X-KDE-ParentComponents=alwaysopenonactivescreen
