@@ -38,7 +38,7 @@ registerShortcut("Step move: down"  , "Step Move: Down"  , "Alt+C", moveDown  );
 
 ///////////////////////
 // move window
-//////////////////////////////////////////////
+///////////////////////
 
 function moveCenter() {
     win = workspace.activeClient;

@@ -1,3 +1,7 @@
+# v2.0
+
+- add shortcut to move to center
+
 ## v1.2
 
 - fix shortcuts not working
