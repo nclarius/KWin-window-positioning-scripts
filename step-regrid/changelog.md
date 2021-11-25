@@ -1,3 +1,8 @@
+## v2.1
+
+- fix an error with regridding
+- add Dutch and German translations of metadata
+
 # v2.0
 
 - add shortcut for resetting grid to center

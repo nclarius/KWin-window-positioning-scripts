@@ -12,10 +12,10 @@ Comment[nl]=Verplaats het vensterrooster één stap (naar link/rechts/boven/onde
 Icon=preferences-system-windows
 
 X-KDE-PluginInfo-Name=stepregrid
+X-KDE-PluginInfo-Version=2.1
 X-KDE-PluginInfo-Author=Natalie Clarius
 X-KDE-PluginInfo-Email=natalie_clarius@yahoo.de
-X-KDE-PluginInfo-License=GPL
-X-KDE-PluginInfo-Version=2.0
+X-KDE-PluginInfo-License=GPL v3.0
 
 Type=Service
 X-KDE-ServiceTypes=KWin/Script,KCModule

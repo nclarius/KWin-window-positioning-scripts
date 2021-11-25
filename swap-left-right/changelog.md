@@ -1,3 +1,8 @@
+# v3.0
+
+- also swap windows not occupying the full screen height
+- add Dutch and German translations of metadata 
+
 # v2.0
 
 - more accurate detection of neighboring window

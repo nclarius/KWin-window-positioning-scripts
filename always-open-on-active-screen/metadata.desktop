@@ -11,11 +11,11 @@ Comment[de]=Öffnet neue Fenster immer auf dem Monitor mit dem Mauszeiger
 Comment[nl]=Opent nieuwe vensters altijd op het scherm met de cursor]
 Icon=preferences-system-windows
 
+X-KDE-PluginInfo-Name=alwaysopenonactivescreen
+X-KDE-PluginInfo-Version=2.1
 X-KDE-PluginInfo-Author=Natalie Clarius
 X-KDE-PluginInfo-Email=natalie_clarius@yahoo.de
-X-KDE-PluginInfo-Name=alwaysopenonactivescreen
-X-KDE-PluginInfo-Version=2.0
-X-KDE-PluginInfo-License=GPL
+X-KDE-PluginInfo-License=GPL v3.0
 
 Type=Service
 X-KDE-ServiceTypes=KWin/Script,KCModule
