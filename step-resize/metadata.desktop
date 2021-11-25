@@ -4,7 +4,9 @@
 
 [Desktop Entry]
 Name=Step Resize
+Name[nl]=Stapsgewijze afmetingen
 Comment=Resize (increase/decrease width/height) the active window one step
+Comment[nl]=Pas de afmetingen (breedte/hoogte) van het actieve venster stapsgewijs aan
 Icon=preferences-system-windows
 
 X-KDE-PluginInfo-Name=stepresize

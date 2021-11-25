@@ -4,7 +4,9 @@
 
 [Desktop Entry]
 Name=Swap Left and Right
+Name[nl]=Verwissel links en rechts
 Comment=Swap the windows tiled to the left and right halves of the screen
+Comment[nl]=Verwissel de links en rechts getegelde vensters van plaats
 Icon=preferences-system-windows
 
 X-KDE-PluginInfo-Author=Natalie Clarius
