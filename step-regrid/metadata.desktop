@@ -4,7 +4,9 @@
 
 [Desktop Entry]
 Name=Step Re-Grid
+Name[nl]=Stapsgewijze roosterverplaatsing
 Comment=Shift the window grid (resize towards left/right/top/bottom/center) in one step
+Comment[nl]=Verplaats het vensterrooster één stap (naar link/rechts/boven/onder/midden)
 Icon=preferences-system-windows
 
 X-KDE-PluginInfo-Name=stepregrid

@@ -4,7 +4,9 @@
 
 [Desktop Entry]
 Name=Always Open on Focused Screen
+Name[nl]=Altijd openen op gefocust scherm
 Comment=Always opens new windows on the monitor that has the focused window
+Comment[nl]=Open nieuwe vensters altijd op het scherm met een gefocust venster
 Icon=preferences-system-windows
 
 X-KDE-PluginInfo-Author=Natalie Clarius

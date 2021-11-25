@@ -4,7 +4,9 @@
 
 [Desktop Entry]
 Name=Always Open on Primary Screen
+Name[nl]=Altijd openen op primair scherm
 Comment=Always opens new windows on the monitor that is set as primary in the display configuration
+Comment[nl]=Opent nieuwe vensters altijd op het scherm dat is ingesteld als primair
 Icon=preferences-system-windows
 
 X-KDE-PluginInfo-Author=Natalie Clarius
