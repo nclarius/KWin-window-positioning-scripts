@@ -46,3 +46,4 @@ This is free software, and you are welcome to redistribute and/or modify it unde
 
 If you would like to thank me, you can always make me happy with [a review](https://store.kde.org/p/1617640) or [a cup of tea](https://www.buymeacoffee.com/nclarius).
 
+

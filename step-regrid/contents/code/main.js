@@ -51,36 +51,46 @@ function shiftCenter() {
     wins = config.resizeOthers ? getClients(area) : [active];
     for (var i = 0; i < wins.length; i++) {
         win = wins[i];
-        if (!tiledWidth(win, area)) {
-            // tiled to left/right: set to half width
-            win.clientStartUserMovedResized(win);
-            if (tiledLeft(win, area)) {
-                win.gemetry.x = area.x;
-                win.geometry.width = area.width/2;
-            }
-            else if (tiledRight(win, area)) {
-                win.geometry.x = area.x + area.width/2;
-                win.geometry.width = area.width/2;
-            }
-            else {
-            }
-            win.clientFinishUserMovedResized(win);
-        };
-        if (!tiledHeight(win, area)) {
-            // tiled to top/bottom: set to half height
-            win.clientStartUserMovedResized(win);
-            if (tiledTop(win, area)) {
-                win.geometry.y = area.y;
-                win.geometry.height = area.height/2;
-            }
-            else if (tiledBottom(win, area)) {
-                win.geometry.y = area.y + area.height/2;
-                win.geometry.height = area.height/2;
-            }
-            else {
-            }
-            win.clientFinishUserMovedResized(win);
+
+        // shift windows horizontally center
+        win.clientStartUserMovedResized(win);
+        if (tiledWidth(win, area)) {
+            // tiled width: don't change
         }
+        else if (tiledLeft(win, area)) {
+            // tiled left: set to half width
+            win.gemetry.x = area.x;
+            win.geometry.width = area.width/2;
+        }
+        else if (tiledRight(win, area)) {
+            // tiled right: set to half width
+            win.geometry.x = area.x + area.width/2;
+            win.geometry.width = area.width/2;
+        }
+        else {
+            // tiled mid: don't change
+        }
+        win.clientFinishUserMovedResized(win);
+
+        // shift windows vertically center
+        win.clientStartUserMovedResized(win);
+        if (tiledWidth(win, area)) {
+            // tiled width: don't change
+        }
+        else if (tiledTop(win, area)) {
+            // tiled top: set to half height
+            win.geometry.y = area.y;
+            win.geometry.height = area.height/2;
+        }
+        else if (tiledBottom(win, area)) {
+            // tiled bottom: set to half height
+            win.geometry.y = area.y + area.height/2;
+            win.geometry.height = area.height/2;
+        }
+        else {
+            // tiled mid: don't change
+        }
+        win.clientFinishUserMovedResized(win);
     }
 }
 
@@ -91,23 +101,26 @@ function shiftRight() {
     wins = config.resizeOthers ? getClients(area) : [active];
     for (var i = 0; i < wins.length; i++) {
         win = wins[i];
-        if (!tiledWidth(win, area)) {
-            win.clientStartUserMovedResized(win);
-            if (tiledLeft(win, area)) {
-                // tiled left: increase to right
-                win.geometry.width += config.stepHor;
-            }
-            else if (tiledRight(win, area)) {
-                // tiled right: decrease from left
-                win.geometry.width -= config.stepHor;
-                win.geometry.x += config.stepHor;
-            }
-            else {
-                // tiled mid: move to right
-                win.geometry.x += config.stepHor;
-            }
-            win.clientFinishUserMovedResized(win);
+
+        // shift windows right
+        win.clientStartUserMovedResized(win);
+        if (tiledWidth(win, area)) {
+            // tiled width: don't change
         }
+        else if (tiledLeft(win, area)) {
+            // tiled left: increase to right
+            win.geometry.width += config.stepHor;
+        }
+        else if (tiledRight(win, area)) {
+            // tiled right: decrease from left
+            win.geometry.width -= config.stepHor;
+            win.geometry.x += config.stepHor;
+        }
+        else {
+            // tiled mid: move to right
+            win.geometry.x += config.stepHor;
+        }
+        win.clientFinishUserMovedResized(win);
     }
 }
 
@@ -118,23 +131,26 @@ function shiftLeft() {
     wins = config.resizeOthers ? getClients(area) : [active];
     for (var i = 0; i < wins.length; i++) {
         win = wins[i];
-        if (!tiledWidth(win, area)) {
-            win.clientStartUserMovedResized(win);
-            if (tiledLeft(win, area)) {
-                // tiled left: decrease from right
-                win.geometry.width -= config.stepHor;
-            }
-            else if (tiledRight(win, area)) {
-                // tiled right: increase to left
-                win.geometry.width += config.stepHor;
-                win.geometry.x -= config.stepHor;
-            }
-            else {
-                // tiled mid: move to right
-                win.geometry.x += config.stepHor;
-            }
-            win.clientFinishUserMovedResized(win);
+
+        // shift windows left
+        win.clientStartUserMovedResized(win);
+        if (tiledWidth(win, area)) {
+            // tiled width: don't change
         }
+        else if (tiledLeft(win, area)) {
+            // tiled left: decrease from right
+            win.geometry.width -= config.stepHor;
+        }
+        else if (tiledRight(win, area)) {
+            // tiled right: increase to left
+            win.geometry.width += config.stepHor;
+            win.geometry.x -= config.stepHor;
+        }
+        else {
+            // tiled mid: move to right
+            win.geometry.x += config.stepHor;
+        }
+        win.clientFinishUserMovedResized(win);
     }
 }
 
@@ -145,23 +161,26 @@ function shiftDown() {
     wins = config.resizeOthers ? getClients(area) : [active];
     for (var i = 0; i < wins.length; i++) {
         win = wins[i];
-        if (!tiledHeight(win, area)) {
-            win.clientStartUserMovedResized(win);
-            if (tiledTop(win, area)) {
-                // tiled top: increase to bottom
-                win.geometry.height += config.stepVer;
-            }
-            else if (tiledBottom(win, area)) {
-                // tiled bottom: decrease from top
-                win.geometry.height -= config.stepVer;
-                win.geometry.y += config.stepVer;
-            }
-            else {
-                // tiled mid: move to bottom
-                win.geometry.y += config.stepVer;
-            }
-            win.clientFinishUserMovedResized(win);
+
+        // shift windows down
+        win.clientStartUserMovedResized(win);
+        if (tiledHeight(win, area)) {
+            // tiled height: don't change
         }
+        else if (tiledTop(win, area)) {
+            // tiled top: increase to bottom
+            win.geometry.height += config.stepVer;
+        }
+        else if (tiledBottom(win, area)) {
+            // tiled bottom: decrease from top
+            win.geometry.height -= config.stepVer;
+            win.geometry.y += config.stepVer;
+        }
+        else {
+            // tiled mid: move to bottom
+            win.geometry.y += config.stepVer;
+        }
+        win.clientFinishUserMovedResized(win);
     }
 }
 
@@ -172,23 +191,26 @@ function shiftUp() {
     wins = config.resizeOthers ? getClients(area) : [active];
     for (var i = 0; i < wins.length; i++) {
         win = wins[i];
-        if (!tiledHeight(win, area)) {
-            win.clientStartUserMovedResized(win);
-            if (tiledTop(win, area)) {
-                // tiled top: decrease from bottom
-                win.geometry.height -= config.stepVer;
-            }
-            else if (tiledBottom(win, area)) {
-                // tiled bottom: increase to top
-                win.geometry.height += config.stepVer;
-                win.geometry.y -= config.stepVer;
-            }
-            else {
-                // tiled mid: move to top
-                win.geometry.y -= config.stepVer;
-            }
-            win.clientFinishUserMovedResized(win);
+
+        // shift windows up
+        win.clientStartUserMovedResized(win);
+        if (tiledHeight(win, area)) {
+            // tiled height: don't change
         }
+        else if (tiledTop(win, area)) {
+            // tiled top: decrease from bottom
+            win.geometry.height -= config.stepVer;
+        }
+        else if (tiledBottom(win, area)) {
+            // tiled bottom: increase to top
+            win.geometry.height += config.stepVer;
+            win.geometry.y -= config.stepVer;
+        }
+        else {
+            // tiled mid: move to top
+            win.geometry.y -= config.stepVer;
+        }
+        win.clientFinishUserMovedResized(win);
     }
 }
 
@@ -211,31 +233,30 @@ function getClients(area) {
 // determine tiledness
 ///////////////////////
 
-function tiledWidth(win, area) {
-    return Math.abs(win.width - area.width) <= 2 * config.tolerance;
-}
-
-function tiledHeight(win, area) {
-    return Math.abs(win.height - area.height) <= 2 * config.tolerance;
-}
-
 function tiledLeft(win, area) {
-    return Math.abs(win.x - area.x) <= config.tolerance;
+    return Math.abs(win.left - area.left) <= config.tolerance;
 }
 
 function tiledRight(win, area) {
-    return Math.abs((win.x + win.width) - (area.x + area.width)) <= config.tolerance;
+    return Math.abs(win.right - area.right) <= config.tolerance;
 }
 
 function tiledTop(win, area) {
-    return Math.abs(win.y - area.y) <= config.tolerance;
+    return Math.abs(win.top - area.top) <= config.tolerance;
 }
 
 function tiledBottom(win, area) {
-    return Math.abs((win.y + win.height) - (area.y + area.height)) <= config.tolerance;
+    return Math.abs(win.bottom - area.bottom) <= config.tolerance;
+}
+
+function tiledWidth(win, area) {
+    return tiledLeft(win, area) && tiledRight(win, area);
+}
+
+function tiledHeight(win, area) {
+    return tiledTop(win, area) && tiledBottom(win, area);
 }
 
 function tiledFull(win, area) {
-    return Object.keys(area).every(coord =>
-        Math.abs(win[coord] - area[coord]) <= config.tolerance);
+    return tiledWidth(win, area) && tiledHeight(win, area);
 }

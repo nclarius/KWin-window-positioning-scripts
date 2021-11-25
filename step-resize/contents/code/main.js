@@ -43,13 +43,13 @@ registerShortcut("Step resize: shrink height", "Step Resize: Shrink Height", "Al
 ///////////////////////
 
 function incrAr() {
-    // Grow horizontally and vertically
+    // grow horizontally and vertically
     incrHor();
     incrVer();
 }
 
 function decrAr() {
-    // Shrink horizontally and vertically
+    // shrink horizontally and vertically
     decrHor();
     decrVer();
 }
@@ -60,7 +60,10 @@ function incrHor() {
     debug("increase width", win.caption, win.geometry);
 
     win.clientStartUserMovedResized(win);
-    if (tiledLeft(win, area)) {
+    if (tiledWidth(win, area)) {
+        // full width: do nothing
+    }
+    else if (tiledLeft(win, area)) {
         // tiled left: increase to right and leave in place
         debug("tiled left");
         win.geometry.width += config.stepHor;
@@ -86,7 +89,10 @@ function decrHor() {
     debug("decrease width",  win.caption, win.geometry);
 
     win.clientStartUserMovedResized(win);
-    if (tiledLeft(win, area)) {
+    if (tiledWidth(win, area)) {
+        // full width: do nothing
+    }
+    else if (tiledLeft(win, area)) {
         // tiled left: decrease from right and leave in place
         debug("tiled left");
         win.geometry.width -= config.stepHor;
@@ -112,7 +118,10 @@ function incrVer() {
     debug("increase height",  win.caption, win.geomtry);
 
     win.clientStartUserMovedResized(win);
-    if (tiledTop(win, area)) {
+    if (tiledHeight(win, area)) {
+        // full height: do nothing
+    }
+    else if (tiledTop(win, area)) {
         // tiled top: increase to bottom and leave in place
         debug("tiled top");
         win.geometry.height += config.stepVer;
@@ -138,7 +147,10 @@ function decrVer() {
     debug("decrease height",  win.caption, win.geometry);
 
     win.clientStartUserMovedResized(win);
-    if (tiledTop(win, area)) {
+    if (tiledHeight(win, area)) {
+        // full height: do nothing
+    }
+    else if (tiledTop(win, area)) {
         // tiled top: decrease from bottom and leave in place
         debug("tiled top");
         win.geometry.height -= config.stepVer;
@@ -163,17 +175,25 @@ function decrVer() {
 ///////////////////////
 
 function tiledLeft(win, area) {
-    return Math.abs(win.x - area.x) <= config.tolerance;
+    return Math.abs(win.left - area.left) <= config.tolerance;
 }
 
 function tiledRight(win, area) {
-    return Math.abs((win.x + win.width) - (area.x + area.width)) <= config.tolerance;
+    return Math.abs(win.right - area.right) <= config.tolerance;
 }
 
 function tiledTop(win, area) {
-    return Math.abs(win.y - area.y) <= config.tolerance;
+    return Math.abs(win.top - area.top) <= config.tolerance;
 }
 
 function tiledBottom(win, area) {
-    return Math.abs((win.y + win.height) - (area.y + area.height)) <= config.tolerance;
+    return Math.abs(win.bottom - area.bottom) <= config.tolerance;
+}
+
+function tiledWidth(win, area) {
+    return tiledLeft(win, area) && tiledRight(win, area);
+}
+
+function tiledHeight(win, area) {
+    return tiledTop(win, area) && tiledBottom(win, area);
 }
