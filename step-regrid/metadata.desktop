@@ -4,14 +4,14 @@
 
 [Desktop Entry]
 Name=Step Re-Grid
-Comment=Shift the window grid (resize towards left/right/top/bottom) in one step
+Comment=Shift the window grid (resize towards left/right/top/bottom/center) in one step
 Icon=preferences-system-windows
 
 X-KDE-PluginInfo-Name=stepregrid
 X-KDE-PluginInfo-Author=Natalie Clarius
 X-KDE-PluginInfo-Email=natalie_clarius@yahoo.de
 X-KDE-PluginInfo-License=GPL
-X-KDE-PluginInfo-Version=1.1
+X-KDE-PluginInfo-Version=2.0
 
 Type=Service
 X-KDE-ServiceTypes=KWin/Script,KCModule
