@@ -234,19 +234,19 @@ function getClients(area) {
 ///////////////////////
 
 function tiledLeft(win, area) {
-    return Math.abs(win.left - area.left) <= config.tolerance;
+    return Math.abs(win.x - area.x) <= config.tolerance;
 }
 
 function tiledRight(win, area) {
-    return Math.abs(win.right - area.right) <= config.tolerance;
+    return Math.abs((win.x + win.width) - (area.x + area.width)) <= config.tolerance;
 }
 
 function tiledTop(win, area) {
-    return Math.abs(win.top - area.top) <= config.tolerance;
+    return Math.abs(win.y - area.y) <= config.tolerance;
 }
 
 function tiledBottom(win, area) {
-    return Math.abs(win.bottom - area.bottom) <= config.tolerance;
+    return Math.abs((win.y + win.height) - (area.y + area.height)) <= config.tolerance;
 }
 
 function tiledWidth(win, area) {

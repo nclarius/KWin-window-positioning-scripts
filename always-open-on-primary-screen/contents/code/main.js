@@ -17,6 +17,6 @@ workspace.clientAdded.connect(function(client) {
     client.geometry.width = Math.min(client.width, area.width);
     client.geometry.height = Math.min(client.height, area.height);
     // left/top window edge between left and right/top and bottom screen edges
-    client.geometry.x = Math.max(area.left, Math.min(area.right - client.width, client.left));
-    client.geometry.y = Math.max(area.top, Math.min(area.bottom - client.height, client.top));
+    client.geometry.x = Math.max(area.x, Math.min(area.x + area.width - client.width, client.x));
+    client.geometry.y = Math.max(area.y, Math.min(area.y + area.height - client.height, client.y));
 });

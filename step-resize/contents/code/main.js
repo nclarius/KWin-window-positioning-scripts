@@ -60,8 +60,11 @@ function incrHor() {
     debug("increase width", win.caption, win.geometry);
 
     win.clientStartUserMovedResized(win);
-    if (tiledWidth(win, area)) {
-        // full width: do nothing
+    if (tiledEvenHor(win, area)) {
+        // not horizontally tiled or tiled full width: increase to right and move half to left
+        debug("tiled non-horizontal");
+        win.geometry.width += config.stepHor;
+        win.geometry.x -= config.stepHor/2;
     }
     else if (tiledLeft(win, area)) {
         // tiled left: increase to right and leave in place
@@ -74,12 +77,6 @@ function incrHor() {
         win.geometry.width += config.stepHor;
         win.geometry.x -= config.stepHor;
     }
-    else {
-        // not tiled: increase to right and move half to left
-        debug("tiled non-horizontal");
-        win.geometry.width += config.stepHor;
-        win.geometry.x -= config.stepHor/2;
-    }
     win.clientFinishUserMovedResized(win);
 }
 
@@ -89,8 +86,11 @@ function decrHor() {
     debug("decrease width",  win.caption, win.geometry);
 
     win.clientStartUserMovedResized(win);
-    if (tiledWidth(win, area)) {
-        // full width: do nothing
+    if (tiledEvenHor(win, area)) {
+        // not horizontally tiled or tiled full width: decrease from right and move half to right
+        debug("tiled non-horizontal");
+        win.geometry.width -= config.stepHor;
+        win.geometry.x += config.stepHor/2;
     }
     else if (tiledLeft(win, area)) {
         // tiled left: decrease from right and leave in place
@@ -103,12 +103,6 @@ function decrHor() {
         win.geometry.width -= config.stepHor;
         win.geometry.x += config.stepHor;
     }
-    else {
-        // not tiled: decrease from right and move half to right
-        debug("tiled non-horizontal");
-        win.geometry.width -= config.stepHor;
-        win.geometry.x += config.stepHor/2;
-    }
     win.clientFinishUserMovedResized(win);
 }
 
@@ -118,8 +112,11 @@ function incrVer() {
     debug("increase height",  win.caption, win.geomtry);
 
     win.clientStartUserMovedResized(win);
-    if (tiledHeight(win, area)) {
-        // full height: do nothing
+    if (tiledEvenVer(win, area)) {
+        // not vertically tiled or tiled full height: increase to bottom and move half to top
+        debug("tiled non-vertical");
+        win.geometry.height += config.stepVer;
+        win.geometry.y -= config.stepVer/2;
     }
     else if (tiledTop(win, area)) {
         // tiled top: increase to bottom and leave in place
@@ -132,12 +129,6 @@ function incrVer() {
         win.geometry.height += config.stepVer;
         win.geometry.y -= config.stepVer;
     }
-    else {
-        // not tiled: increase to bottom and move half to top
-        debug("tiled non-vertical");
-        win.geometry.height += config.stepVer;
-        win.geometry.y -= config.stepVer/2;
-    }
     win.clientFinishUserMovedResized(win);
 }
 
@@ -147,8 +138,11 @@ function decrVer() {
     debug("decrease height",  win.caption, win.geometry);
 
     win.clientStartUserMovedResized(win);
-    if (tiledHeight(win, area)) {
-        // full height: do nothing
+    if (tiledEvenVer(win, area)) {
+        // not vertically tiled or tiled full height: decrease from bottom and move half to bottom
+        debug("tiled non-vertical");
+        win.geometry.height -= config.stepVer;
+        win.geometry.y += config.stepVer/2;
     }
     else if (tiledTop(win, area)) {
         // tiled top: decrease from bottom and leave in place
@@ -161,12 +155,6 @@ function decrVer() {
         win.geometry.height -= config.stepVer;
         win.geometry.y += config.stepVer;
     }
-    else {
-        // not tiled: decrease from bottom and move half to bottom
-        debug("tiled non-vertical");
-        win.geometry.height -= config.stepVer;
-        win.geometry.y += config.stepVer/2;
-    }
     win.clientFinishUserMovedResized(win);
 }
 
@@ -175,19 +163,19 @@ function decrVer() {
 ///////////////////////
 
 function tiledLeft(win, area) {
-    return Math.abs(win.left - area.left) <= config.tolerance;
+    return Math.abs(win.x - area.x) <= config.tolerance;
 }
 
 function tiledRight(win, area) {
-    return Math.abs(win.right - area.right) <= config.tolerance;
+    return Math.abs((win.x + win.width) - (area.x + area.width)) <= config.tolerance;
 }
 
 function tiledTop(win, area) {
-    return Math.abs(win.top - area.top) <= config.tolerance;
+    return Math.abs(win.y - area.y) <= config.tolerance;
 }
 
 function tiledBottom(win, area) {
-    return Math.abs(win.bottom - area.bottom) <= config.tolerance;
+    return Math.abs((win.y + win.height) - (area.y + area.height)) <= config.tolerance;
 }
 
 function tiledWidth(win, area) {
@@ -196,4 +184,14 @@ function tiledWidth(win, area) {
 
 function tiledHeight(win, area) {
     return tiledTop(win, area) && tiledBottom(win, area);
+}
+
+function tiledEvenHor(win, area) {
+    return (!tiledLeft(win, area) && !tiledRight(win, area)) ||
+           (tiledLeft(win, area) && tiledRight(win, area))
+}
+
+function tiledEvenVer(win, area) {
+    return (!tiledTop(win, area) && !tiledBottom(win, area)) ||
+           (tiledTop(win, area) && tiledBottom(win, area))
 }
