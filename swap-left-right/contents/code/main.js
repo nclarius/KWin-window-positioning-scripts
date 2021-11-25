@@ -33,12 +33,14 @@ function swapLeftRight() {
 
     // swap halves
     // move left windows to right
-    for (const win of left) {
+    for (var i = 0; i < left.length; i++) {
+        win = left[i];
         win.geometry.x = grid.midH;
         win.minimized = false;
     }
     // move right windows to left
-    for (const win of right) {
+    for (var i = 0; i < right.length; i++) {
+        win = right[i];
         win.geometry.x = grid.left;
         win.minimized = false;
     }

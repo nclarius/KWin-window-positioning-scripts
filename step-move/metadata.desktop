@@ -4,8 +4,10 @@
 
 [Desktop Entry]
 Name=Step Move
+Name[de]=Schrittweise verschieben
 Name[nl]=Stapsgewijs verplaatsen
 Comment=Move (left/right/top/bottom/center) the active window one step
+Comment[de]=Verschiebt (nach links/rechts/oben/unten/mitte) das aktive Fenster einen Schritt
 Comment[nl]=Verplaats het actieve venster één stap opzij (links/rechts/boven/onder/midden)
 Icon=preferences-system-windows
 

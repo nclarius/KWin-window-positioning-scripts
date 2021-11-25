@@ -4,8 +4,10 @@
 
 [Desktop Entry]
 Name=Step Resize
+Name[de]=Schrittweise Größe ändern
 Name[nl]=Stapsgewijze afmetingen
 Comment=Resize (increase/decrease width/height) the active window one step
+Comment[de]=Ändert die Größe (Höhe/Breite vergrößern/verkleinern) des aktiven Fensters einen Schritt
 Comment[nl]=Pas de afmetingen (breedte/hoogte) van het actieve venster stapsgewijs aan
 Icon=preferences-system-windows
 

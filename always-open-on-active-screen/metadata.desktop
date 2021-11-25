@@ -4,9 +4,11 @@
 
 [Desktop Entry]
 Name=Always Open on Active Screen
+Name[de]=Immer auf aktivem Bildschirm öffnen
 Name[nl]=Altijd openen op actief scherm
 Comment=Always opens new windows on the monitor that has the mouse cursor
-Comment[nl=Opent nieuwe vensters altijd op het scherm met de cursor]
+Comment[de]=Öffnet neue Fenster immer auf dem Monitor mit dem Mauszeiger
+Comment[nl]=Opent nieuwe vensters altijd op het scherm met de cursor]
 Icon=preferences-system-windows
 
 X-KDE-PluginInfo-Author=Natalie Clarius

@@ -4,8 +4,10 @@
 
 [Desktop Entry]
 Name=Step Re-Grid
+Name[de]=Schrittweise Raster verschieben
 Name[nl]=Stapsgewijze roosterverplaatsing
 Comment=Shift the window grid (resize towards left/right/top/bottom/center) in one step
+Commment[de]Verschiebt (nach links/rechts/oben/unten/mitte) das Fenterraster einen Schritt
 Comment[nl]=Verplaats het vensterrooster één stap (naar link/rechts/boven/onder/midden)
 Icon=preferences-system-windows
 

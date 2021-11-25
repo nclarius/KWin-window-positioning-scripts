@@ -4,8 +4,10 @@
 
 [Desktop Entry]
 Name=Always Open on Focused Screen
+Name[de]=Immer auf fokussiertem Bildschirm öffnen
 Name[nl]=Altijd openen op gefocust scherm
 Comment=Always opens new windows on the monitor that has the focused window
+Comment[de]=Öffnet neue Fenster immer auf dem Bildschirm mit dem fokussierten Fenster
 Comment[nl]=Open nieuwe vensters altijd op het scherm met een gefocust venster
 Icon=preferences-system-windows
 
