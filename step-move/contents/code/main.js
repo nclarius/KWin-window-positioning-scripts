@@ -42,7 +42,7 @@ registerShortcut("Step move: down"  , "Step Move: Down"  , "Alt+C", moveDown  );
 
 function moveCenter() {
     win = workspace.activeClient;
-    area = workspace.clientArea(win, win.screen, win.desktop);
+    area = workspace.clientArea(KWin.WorkArea, win);
     debug("move center", win.caption);
     win.clientStartUserMovedResized(win);
     win.geometry.x = area.x + area.width/2 - win.width/2;

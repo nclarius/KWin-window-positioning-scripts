@@ -14,7 +14,7 @@ function swapLeftRight() {
     // get area geometry
     var active = workspace.activeClient;
     if (active == undefined) return;
-    var area = workspace.clientArea(active, active.screen, active.desktop);
+    var area = workspace.clientArea(KWin.WorkArea, active);
     var grid = {
         left: area.x,
         midH: area.x + area.width/2,

@@ -47,7 +47,7 @@ registerShortcut("Step regrid: shift upwards"   , "Step Regrid: Shift Upwards"  
 function shiftCenter() {
     debug("regrid center");
     active = workspace.activeClient;
-    area = workspace.clientArea(active, active.screen, active.desktop);
+    area = workspace.clientArea(KWin.WorkArea, active);
     wins = config.resizeOthers ? getClients(area) : [active];
     for (var i = 0; i < wins.length; i++) {
         win = wins[i];
@@ -97,7 +97,7 @@ function shiftCenter() {
 function shiftRight() {
     debug("regrid rightwards");
     active = workspace.activeClient;
-    area = workspace.clientArea(active, active.screen, active.desktop);
+    area = workspace.clientArea(KWin.WorkArea, active);
     wins = config.resizeOthers ? getClients(area) : [active];
     for (var i = 0; i < wins.length; i++) {
         win = wins[i];
@@ -127,7 +127,7 @@ function shiftRight() {
 function shiftLeft() {
     debug("regrid leftwards");
     active = workspace.activeClient;
-    area = workspace.clientArea(active, active.screen, active.desktop);
+    area = workspace.clientArea(KWin.WorkArea, active);
     wins = config.resizeOthers ? getClients(area) : [active];
     for (var i = 0; i < wins.length; i++) {
         win = wins[i];
@@ -157,7 +157,7 @@ function shiftLeft() {
 function shiftDown() {
     debug("regrid downwards");
     active = workspace.activeClient;
-    area = workspace.clientArea(active, active.screen, active.desktop);
+    area = workspace.clientArea(KWin.WorkArea, active);
     wins = config.resizeOthers ? getClients(area) : [active];
     for (var i = 0; i < wins.length; i++) {
         win = wins[i];
@@ -187,7 +187,7 @@ function shiftDown() {
 function shiftUp() {
     debug("regrid upwards");
     active = workspace.activeClient;
-    area = workspace.clientArea(active, active.screen, active.desktop);
+    area = workspace.clientArea(KWin.WorkArea, active);
     wins = config.resizeOthers ? getClients(area) : [active];
     for (var i = 0; i < wins.length; i++) {
         win = wins[i];

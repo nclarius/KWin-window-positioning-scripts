@@ -1,3 +1,7 @@
+## v1.4
+
+- fix incorrect area obtainment
+
 ## v1.3
 
 - revert oversize prevention

@@ -1,3 +1,7 @@
+## v2.2
+
+- fix incorrect area obtainment
+
 ## v2.1
 
 - fix an error with regridding

@@ -1,3 +1,7 @@
+## v3.1
+
+- fix incorrect area obtainment
+
 # v3.0
 
 - also swap windows not occupying the full screen height
