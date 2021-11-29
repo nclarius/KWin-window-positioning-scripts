@@ -32,13 +32,7 @@ qdbus org.kde.KWin /KWin reconfigure
 
 ## Set-up
 
-- In order for the script to work, you need to have *Active screen follows mouse* set to enabled:  
-Via graphical interface: *System Settings* > *Window Management* > *Window Behavior* > *Focus* > *Multiscreen Behavor* > *Active screen follows mouse* (the option shows only when multiple monitors are currently connected).  
-Or by editing the config file: `~/.config/kwinrc`: 
-  ```
-  [Windows]
-  ActiveMouseScreen=true
-  ```
+- In order for the script to work, you need to have *System Settings* > *Window Management* > *Window Behavior* > *Focus* > *Active screen follows mouse* set to enabled.
 
 
 
