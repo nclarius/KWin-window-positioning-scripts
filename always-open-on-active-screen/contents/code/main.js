@@ -11,7 +11,7 @@ workspace.clientAdded.connect(function(client) {
     workspace.sendClientToScreen(client, workspace.activeScreen);
 
     // clip and move client into bounds of screen dimensions
-    if (!client.moveable) return;
+    if (! (client.moveable && client.resizeable)) return;
     area = workspace.clientArea(KWin.WorkArea, client);
     // window width/height maximally screen width/height
     client.geometry.width = Math.min(client.width, area.width);

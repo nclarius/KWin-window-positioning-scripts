@@ -1,3 +1,7 @@
+## v2.2
+
+- ensure adjusting window to screen dimensions is possible
+
 ## v2.1
 
 - fix an error with fit window on screen
