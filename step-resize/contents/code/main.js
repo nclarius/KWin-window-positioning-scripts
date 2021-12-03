@@ -56,7 +56,7 @@ function decrAr() {
 
 function incrHor() {
     win = workspace.activeClient;
-    area = workspace.clientArea(KWin.WorkArea, win);
+    area = workspace.clientArea(KWin.MaximizeArea, win);
     debug("increase width", win.caption, win.geometry);
 
     win.clientStartUserMovedResized(win);
@@ -82,7 +82,7 @@ function incrHor() {
 
 function decrHor() {
     win = workspace.activeClient;
-    area = workspace.clientArea(KWin.WorkArea, win);
+    area = workspace.clientArea(KWin.MaximizeArea, win);
     debug("decrease width",  win.caption, win.geometry);
 
     win.clientStartUserMovedResized(win);
@@ -108,7 +108,7 @@ function decrHor() {
 
 function incrVer() {
     win = workspace.activeClient;
-    area = workspace.clientArea(KWin.WorkArea, win);
+    area = workspace.clientArea(KWin.MaximizeArea, win);
     debug("increase height",  win.caption, win.geomtry);
 
     win.clientStartUserMovedResized(win);
@@ -134,7 +134,7 @@ function incrVer() {
 
 function decrVer() {
     win = workspace.activeClient;
-    area = workspace.clientArea(KWin.WorkArea, win);
+    area = workspace.clientArea(KWin.MaximizeArea, win);
     debug("decrease height",  win.caption, win.geometry);
 
     win.clientStartUserMovedResized(win);

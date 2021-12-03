@@ -1,3 +1,7 @@
+## 1.5
+
+- fix incorrect fix of incorrect area obtainment
+
 ## v1.4
 
 - fix incorrect area obtainment

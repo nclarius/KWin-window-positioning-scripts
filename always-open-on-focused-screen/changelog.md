@@ -1,3 +1,7 @@
+## v2.3
+
+- fix incorrect geometry computation
+
 ## v2.2
 
 - ensure adjusting window to screen dimensions is possible
