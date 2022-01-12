@@ -10,8 +10,8 @@ GNU General Public License v3.0
 ///////////////////////
 
 config = {
-    stepHor: readConfig("stepHor", 50),
-    stepVer: readConfig("stepVer", 50),
+    stepHor: readConfig("stepHorizontal", 50),
+    stepVer: readConfig("stepVertical", 50),
     resizeOthers:    readConfig("resizeOthers",    true),
     resizeMinimized: readConfig("resizeMinimized", false),
     tolerance: readConfig("tolerance", 0)
@@ -23,10 +23,11 @@ config = {
 ///////////////////////
 
 debugMode = true;
-function debug(...args) {if (debugMode) {console.debug(...args);}}
-debug("initializing step re-grid");
-debug("step re-grid step sizes:", "horizontal:", config.stepHor, "step vertical:", config.stepVer);
-debug("step re-grid filters:", "resize others:", config.resizeOthers, "resize minimized:", config.resizeMinimized, "tolerance:", config.tolerance);
+function debug(...args) {if (debugMode) {console.debug("Step Re-grid:", ...args);}}
+debug("initializing");
+debug("step sizes:", "horizontal:", config.stepHor, "vertical:", config.stepVer);
+debug("ilters:", "resize others:", config.resizeOthers, "resize minimized:", config.resizeMinimized, "tolerance:", config.tolerance);
+console.debug("");
 
 
 ///////////////////////
@@ -48,18 +49,17 @@ function shiftCenter() {
     debug("regrid center");
     active = workspace.activeClient;
     area = workspace.clientArea(KWin.MaximizeArea, active);
-    wins = config.resizeOthers ? getClients(area) : [active];
+    wins = getClients(area);
+    wins.forEach(win => win.clientStartUserMovedResized(win));
     for (var i = 0; i < wins.length; i++) {
         win = wins[i];
-
         // shift windows horizontally center
-        win.clientStartUserMovedResized(win);
         if (tiledWidth(win, area)) {
             // tiled width: don't change
         }
         else if (tiledLeft(win, area)) {
             // tiled left: set to half width
-            win.gemetry.x = area.x;
+            win.geometry.x = area.x;
             win.geometry.width = area.width/2;
         }
         else if (tiledRight(win, area)) {
@@ -70,10 +70,7 @@ function shiftCenter() {
         else {
             // tiled mid: don't change
         }
-        win.clientFinishUserMovedResized(win);
-
         // shift windows vertically center
-        win.clientStartUserMovedResized(win);
         if (tiledWidth(win, area)) {
             // tiled width: don't change
         }
@@ -90,20 +87,19 @@ function shiftCenter() {
         else {
             // tiled mid: don't change
         }
-        win.clientFinishUserMovedResized(win);
     }
+    wins.forEach(win => win.clientFinishUserMovedResized(win));
 }
 
 function shiftRight() {
     debug("regrid rightwards");
     active = workspace.activeClient;
     area = workspace.clientArea(KWin.MaximizeArea, active);
-    wins = config.resizeOthers ? getClients(area) : [active];
+    wins = getClients(area);
+    wins.forEach(win => win.clientStartUserMovedResized(win));
     for (var i = 0; i < wins.length; i++) {
         win = wins[i];
-
         // shift windows right
-        win.clientStartUserMovedResized(win);
         if (tiledWidth(win, area)) {
             // tiled width: don't change
         }
@@ -120,20 +116,20 @@ function shiftRight() {
             // tiled mid: move to right
             win.geometry.x += config.stepHor;
         }
-        win.clientFinishUserMovedResized(win);
     }
+    wins.forEach(win => win.clientFinishUserMovedResized(win));
 }
 
 function shiftLeft() {
     debug("regrid leftwards");
     active = workspace.activeClient;
     area = workspace.clientArea(KWin.MaximizeArea, active);
-    wins = config.resizeOthers ? getClients(area) : [active];
+    wins = getClients(area);
+
+    wins.forEach(win => win.clientStartUserMovedResized(win));
     for (var i = 0; i < wins.length; i++) {
         win = wins[i];
-
         // shift windows left
-        win.clientStartUserMovedResized(win);
         if (tiledWidth(win, area)) {
             // tiled width: don't change
         }
@@ -150,20 +146,19 @@ function shiftLeft() {
             // tiled mid: move to right
             win.geometry.x += config.stepHor;
         }
-        win.clientFinishUserMovedResized(win);
     }
+    wins.forEach(win => win.clientFinishUserMovedResized(win));
 }
 
 function shiftDown() {
     debug("regrid downwards");
     active = workspace.activeClient;
     area = workspace.clientArea(KWin.MaximizeArea, active);
-    wins = config.resizeOthers ? getClients(area) : [active];
+    wins = getClients(area);
+    wins.forEach(win => win.clientStartUserMovedResized(win));
     for (var i = 0; i < wins.length; i++) {
         win = wins[i];
-
         // shift windows down
-        win.clientStartUserMovedResized(win);
         if (tiledHeight(win, area)) {
             // tiled height: don't change
         }
@@ -180,20 +175,19 @@ function shiftDown() {
             // tiled mid: move to bottom
             win.geometry.y += config.stepVer;
         }
-        win.clientFinishUserMovedResized(win);
     }
+    wins.forEach(win => win.clientFinishUserMovedResized(win));
 }
 
 function shiftUp() {
     debug("regrid upwards");
     active = workspace.activeClient;
     area = workspace.clientArea(KWin.MaximizeArea, active);
-    wins = config.resizeOthers ? getClients(area) : [active];
+    wins = getClients(area);
+    wins.forEach(win => win.clientStartUserMovedResized(win));
     for (var i = 0; i < wins.length; i++) {
         win = wins[i];
-
         // shift windows up
-        win.clientStartUserMovedResized(win);
         if (tiledHeight(win, area)) {
             // tiled height: don't change
         }
@@ -210,8 +204,8 @@ function shiftUp() {
             // tiled mid: move to top
             win.geometry.y -= config.stepVer;
         }
-        win.clientFinishUserMovedResized(win);
     }
+    wins.forEach(win => win.clientFinishUserMovedResized(win));
 }
 
 ///////////////////////
@@ -221,7 +215,7 @@ function shiftUp() {
 function getClients(area) {
     return workspace.clientList().filter(client =>
         (client == workspace.activeClient || config.resizeOthers) &&
-        client.normalWindow && client.resizeable &&
+        client.normalWindow && client.moveable && client.resizeable &&
         (client.desktop == workspace.currentDesktop || client.allDesktops) &&
         client.screen == workspace.activeClient.screen &&
         (!client.minimized || config.includeMinimized) &&

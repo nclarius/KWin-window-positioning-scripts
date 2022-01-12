@@ -12,7 +12,7 @@ Comment[nl]=Verplaats het actieve venster één stap opzij (links/rechts/boven/o
 Icon=preferences-system-windows
 
 X-KDE-PluginInfo-Name=stepmove
-X-KDE-PluginInfo-Version=2.3
+X-KDE-PluginInfo-Version=2.4
 X-KDE-PluginInfo-Author=Natalie Clarius
 X-KDE-PluginInfo-Email=natalie_clarius@yahoo.de
 X-KDE-PluginInfo-License=GPL v3.0

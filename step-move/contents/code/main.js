@@ -20,9 +20,10 @@ config = {
 ///////////////////////
 
 debugMode = true;
-function debug(...args) {if (debugMode) {console.debug(...args);}}
-debug("initializing step move");
-debug("step move settings:", "step horizontal:", config.stepHorizontal, "step vertical:", config.stepVertical);
+function debug(...args) {if (debugMode) {console.debug("Step Move:", ...args);}}
+debug("initializing");
+debug("settings:", "step horizontal:", config.stepHorizontal, "step vertical:", config.stepVertical);
+console.debug("");
 
 
 ///////////////////////
@@ -42,6 +43,7 @@ registerShortcut("Step move: down"  , "Step Move: Down"  , "Alt+C", moveDown  );
 
 function moveCenter() {
     win = workspace.activeClient;
+    if (!win.moveable) return;
     area = workspace.clientArea(KWin.MaximizeArea, active);
     debug("move center", win.caption);
     win.clientStartUserMovedResized(win);
@@ -52,6 +54,7 @@ function moveCenter() {
 
 function moveLeft() {
     win = workspace.activeClient;
+    if (!win.moveable) return;
     debug("move left", win.caption);
     win.clientStartUserMovedResized(win);
     win.geometry.x -= config.stepHorizontal;
@@ -60,6 +63,7 @@ function moveLeft() {
 
 function moveRight() {
     win = workspace.activeClient;
+    if (!win.moveable) return;
     debug("move right", win.caption);
     win.clientStartUserMovedResized(win);
     win.geometry.x += config.stepHorizontal;
@@ -68,6 +72,7 @@ function moveRight() {
 
 function moveUp() {
     win = workspace.activeClient;
+    if (!win.moveable) return;
     debug("move up", win.caption);
     win.clientStartUserMovedResized(win);
     win.geometry.y -= config.stepVertical;
@@ -76,6 +81,7 @@ function moveUp() {
 
 function moveDown() {
     win = workspace.activeClient;
+    if (!win.moveable) return;
     debug("move down", win.caption);
     win.clientStartUserMovedResized(win);
     win.geometry.y += config.stepVertical;

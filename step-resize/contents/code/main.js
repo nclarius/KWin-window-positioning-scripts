@@ -10,8 +10,8 @@ GNU General Public License v3.0
 ///////////////////////
 
 config = {
-    stepHor: readConfig("stepHor", 50),
-    stepVer: readConfig("stepVer", 50),
+    stepHor: readConfig("stepHorizontal", 50),
+    stepVer: readConfig("stepVertical", 50),
     tolerance: readConfig("tolerance", 0)
 };
 
@@ -21,9 +21,10 @@ config = {
 ///////////////////////
 
 debugMode = true;
-function debug(...args) {if (debugMode) {console.debug(...args);}}
-debug("initializing step resize");
-debug("step resize settings:", "step horizontal:", config.stepHor, "step vertical:", config.stepVer, "tolerance:", config.tolerance);
+function debug(...args) {if (debugMode) {console.debug("Step Resize:", ...args);}}
+debug("initializing");
+debug("settings:", "step horizontal:", config.stepHor, "step vertical:", config.stepVer, "tolerance:", config.tolerance);
+console.debug("");
 
 
 ///////////////////////
@@ -56,6 +57,7 @@ function decrAr() {
 
 function incrHor() {
     win = workspace.activeClient;
+    if (!win.resizeable) return;
     area = workspace.clientArea(KWin.MaximizeArea, win);
     debug("increase width", win.caption, win.geometry);
 
@@ -82,6 +84,7 @@ function incrHor() {
 
 function decrHor() {
     win = workspace.activeClient;
+    if (!win.resizeable) return;
     area = workspace.clientArea(KWin.MaximizeArea, win);
     debug("decrease width",  win.caption, win.geometry);
 
@@ -108,6 +111,7 @@ function decrHor() {
 
 function incrVer() {
     win = workspace.activeClient;
+    if (!win.resizeable) return;
     area = workspace.clientArea(KWin.MaximizeArea, win);
     debug("increase height",  win.caption, win.geomtry);
 
@@ -134,6 +138,7 @@ function incrVer() {
 
 function decrVer() {
     win = workspace.activeClient;
+    if (!win.resizeable) return;
     area = workspace.clientArea(KWin.MaximizeArea, win);
     debug("decrease height",  win.caption, win.geometry);
 

@@ -12,7 +12,7 @@ Comment[nl]=Pas de afmetingen (breedte/hoogte) van het actieve venster stapsgewi
 Icon=preferences-system-windows
 
 X-KDE-PluginInfo-Name=stepresize
-X-KDE-PluginInfo-Version=1.5
+X-KDE-PluginInfo-Version=1.6
 X-KDE-PluginInfo-Author=Natalie Clarius
 X-KDE-PluginInfo-Email=natalie_clarius@yahoo.de
 X-KDE-PluginInfo-License=GPL v3.0

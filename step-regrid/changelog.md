@@ -1,3 +1,8 @@
+## v2.4
+
+- fix some commands not working
+- fix configured step size not respected
+
 ## v2.3
 
 - fix incorrect fix of incorrect area obtainment

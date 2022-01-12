@@ -8,14 +8,14 @@ GNU General Public License v3.0
 focusedScreen = workspace.activeScreen;
 workspace.clientActivated.connect(function(client) {
     // update focused screen to screen client is on
-    if (client == null || !client.normalWindow) return;
+    if (client == null || client.specialWindow) return;
     focusedScreen = client.screen;
 });
 
 // when a client is added
 workspace.clientAdded.connect(function(client) {
     // move client to focused screen
-    if (client == null || !client.normalWindow) return;
+    if (client == null || client.desktopWindow || client.dock) return;
     workspace.sendClientToScreen(client, focusedScreen);
 
     // clip and move client into bounds of screen dimensions

@@ -1,3 +1,7 @@
+## v2.4
+
+- ensure current window is indeed moveable
+
 ## v2.3
 
 - fix incorrect fix of incorrect area obtainment

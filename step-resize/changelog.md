@@ -1,4 +1,8 @@
-## 1.5
+## v1.6
+
+- ensure current window is indeed resizeable
+
+## v1.5
 
 - fix incorrect fix of incorrect area obtainment
 

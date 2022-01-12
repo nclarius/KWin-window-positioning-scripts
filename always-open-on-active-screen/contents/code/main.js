@@ -7,7 +7,7 @@ GNU General Public License v3.0
 // when a client is added
 workspace.clientAdded.connect(function(client) {
     // move client to active screen
-    if (client == null || !client.normalWindow) return;
+    if (client == null || client.desktopWindow || client.dock) return;
     workspace.sendClientToScreen(client, workspace.activeScreen);
 
     // clip and move client into bounds of screen dimensions

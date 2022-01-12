@@ -7,7 +7,7 @@ GNU General Public License v3.0
 // when a client is added
 workspace.clientAdded.connect(function(client) {
     // move client to primary (= 0'th) screen
-    if (client == null || !client.normalWindow) return;
+    if (client == null || client.desktopWindow || client.dock) return;
     workspace.sendClientToScreen(client, 0);
 
     // clip and move client into bounds of screen dimensions
