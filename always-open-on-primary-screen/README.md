@@ -4,8 +4,6 @@ Extension for KDE’s window manager to make new windows always open on the moni
 
 ![icon](img/icon_small.png)
 
-[view in KDE Store](https://store.kde.org/p/1617641)
-
 
 
 ## Installation
@@ -38,5 +36,6 @@ This work is licensed under the GNU General Public License v3.0.
 This program comes with absolutely no warranty.  
 This is free software, and you are welcome to redistribute and/or modify it under certain conditions.  
 
-If you would like to thank me, you can always make me happy with [a review](https://store.kde.org/p/1617641) or a cup of coffee:  
+If you would like to thank me, you can always make me happy with a review or a cup of coffee:  
+<a href="https://store.kde.org/p/1617641"><img src="img/kdestore.png" height="35"/></a>
 <a href="https://www.paypal.com/donate/?hosted_button_id=7LUUJD83BWRM4"><img src="https://www.paypalobjects.com/en_US/DK/i/btn/btn_donateCC_LG.gif" height="35"/></a>&nbsp;&nbsp;<a href="https://www.buymeacoffee.com/nclarius"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" height="35"/></a>
