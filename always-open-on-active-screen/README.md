@@ -47,6 +47,8 @@ qdbus org.kde.KWin /KWin reconfigure
 
 © 2021 Natalie Clarius \<natalie_clarius@yahoo.de\>
 
+with contributions by [Joe Defenderfer](https://github.com/joedefen).
+
 This work is licensed under the GNU General Public License v3.0.  
 This program comes with absolutely no warranty.  
 This is free software, and you are welcome to redistribute and/or modify it under certain conditions.  

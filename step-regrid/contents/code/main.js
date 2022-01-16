@@ -26,7 +26,7 @@ debugMode = true;
 function debug(...args) {if (debugMode) {console.debug("Step Re-grid:", ...args);}}
 debug("initializing");
 debug("step sizes:", "horizontal:", config.stepHor, "vertical:", config.stepVer);
-debug("ilters:", "resize others:", config.resizeOthers, "resize minimized:", config.resizeMinimized, "tolerance:", config.tolerance);
+debug("filters:", "resize others:", config.resizeOthers, "resize minimized:", config.resizeMinimized, "tolerance:", config.tolerance);
 console.debug("");
 
 
