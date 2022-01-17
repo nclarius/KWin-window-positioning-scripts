@@ -1,7 +1,0 @@
-[Dolphin]
-GroupedSorting=true
-SortRole=type
-Timestamp=2021,12,3,0,34,11.004
-Version=4
-ViewMode=1
-VisibleRoles=CustomizedDetails,Details_text,Details_size,Details_modificationtime
