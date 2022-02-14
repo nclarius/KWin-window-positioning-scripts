@@ -6,12 +6,15 @@ GNU General Public License v3.0
 
 // when a client is added
 workspace.clientAdded.connect(function(client) {
+    activeScreen = workspace.activeScreen;
     // move client to active screen
     if (client == null || client.desktopWindow || client.dock) return;
-    workspace.sendClientToScreen(client, workspace.activeScreen);
+    if (client.screen == activeScreen) return;
+    console.debug("sending client", client.caption, "to active screen", activeScreen);
+    workspace.sendClientToScreen(client, activeScreen);
 
     // clip and move client into bounds of screen dimensions
-    if (! (client.moveable && client.resizeable)) return;
+    if (!(client.moveable && client.resizeable)) return;
     area = workspace.clientArea(KWin.MaximizeArea, client);
     // window width/height maximally screen width/height
     client.geometry.width = Math.min(client.width, area.width);

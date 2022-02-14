@@ -11,35 +11,37 @@ Extension for KDE’s window manager to make new windows always open on the moni
 
 ### Dependencies
 
-`kwin` (tested with v5.22 - v5.23 on X11).
+`kwin` (tested with v5.22 - v5.24 on X11).
 
-### Method 1: via graphical interface
+### Installation via graphical interface
 
-1. Install the script via *System Settings* > *Window Management* > *KWin Scripts* > *Get New Scripts …* > search for *Always Open on Active Screen* > *Install*.
-2. Activate the script by selecting the checkbox in the respective entry.
+*System Settings* > *Window Management* > *KWin Scripts* > *Get New Scripts …* > search for *Always Open on Active Screen* > *Install*.
 
-### Method 2: via command line
+### Installation via command line
 
 ```bash
 git clone https://github.com/nclarius/KWin-window-positioning-scripts.git
-plasmapkg2 --type kwinscript -i KWin-window-positioning-scripts/always-open-on-active-screen
-kwriteconfig5 --file kwinrc --group Plugins --key alwaysopenonactivescreenEnabled true
-qdbus org.kde.KWin /KWin reconfigure
+cd KWin-window-positioning-scripts/always-open-on-active-screen
+./install.sh
 ```
 
 
 
 ## Set-up
 
-- In order for the script to work, you need to have *Active screen follows mouse* set to enabled:  
-  - Via graphical interface:   
-    *System Settings* > *Window Management* > *Window Behavior* > *Focus* > *Multiscreen Behavor* > *Active screen follows mouse* (the option shows only when multiple monitors are currently connected).  
-  - Or by editing the config file:  
-    `~/.config/kwinrc`: 
-    ```
-    [Windows]
-    ActiveMouseScreen=true
-    ```
+In order for the script to work, you need to have *Active screen follows mouse* set to enabled.
+
+### Set-up via graphical interface
+
+*System Settings* > *Window Management* > *Window Behavior* > *Focus* > *Multiscreen Behavor* > *Active screen follows mouse* (the option shows only when multiple monitors are currently connected).  
+
+### Set-up via command line
+
+```bash
+kwriteconfig5 --file kwinrc --group Windows --key ActiveMouseScreen true
+ActiveMouseScreen=true
+qdbus org.kde.KWin /KWin reconfigure
+```
 
 
 
