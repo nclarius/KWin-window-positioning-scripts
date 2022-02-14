@@ -19,10 +19,10 @@ X-KDE-PluginInfo-License=GPL v3.0
 X-KDE-PluginInfo-Website=https://store.kde.org/p/1617641/
 
 Type=Service
-X-KDE-ServiceTypes=KWin/Script,KCModule
 X-Plasma-API=javascript
 X-Plasma-MainScript=code/main.js
-
-X-KDE-Library=kwin/effects/configs/kcm_kwin4_genericscripted
+X-KDE-ServiceTypes=KWin/Script,KCModule
+X-KDE-ConfigModule=kwin/effects/configs/kcm_kwin4_genericscripted
 X-KDE-PluginKeyword=alwaysopenonprimaryscreen
 X-KDE-ParentComponents=alwaysopenonprimaryscreen
+X-KDE-PluginInfo-EnabledByDefault=true
