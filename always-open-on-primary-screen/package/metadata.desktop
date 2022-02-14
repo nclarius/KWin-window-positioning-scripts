@@ -12,7 +12,7 @@ Comment[nl]=Opent nieuwe vensters altijd op het scherm dat is ingesteld als prim
 Icon=preferences-system-windows
 
 X-KDE-PluginInfo-Name=alwaysopenonprimaryscreen
-X-KDE-PluginInfo-Version=2.3
+X-KDE-PluginInfo-Version=2.4
 X-KDE-PluginInfo-Author=Natalie Clarius
 X-KDE-PluginInfo-Email=natalie_clarius@yahoo.de
 X-KDE-PluginInfo-License=GPL v3.0
