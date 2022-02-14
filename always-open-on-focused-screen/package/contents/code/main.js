@@ -16,6 +16,8 @@ workspace.clientActivated.connect(function(client) {
 workspace.clientAdded.connect(function(client) {
     // move client to focused screen
     if (client == null || client.desktopWindow || client.dock) return;
+    if (client.screen == focusedScreen) return;
+    console.debug("sending client", client.caption, "to focused screen", focusedScreen);
     workspace.sendClientToScreen(client, focusedScreen);
 
     // clip and move client into bounds of screen dimensions

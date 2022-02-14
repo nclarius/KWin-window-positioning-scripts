@@ -1,3 +1,9 @@
+## v2.4
+- make script automatically enabled after install
+- update package structure
+- add install/uninstall scripts
+- add changelog in BB Code format
+
 ## v2.3
 
 - fix incorrect geometry computation
@@ -18,4 +24,3 @@
 # v1.0
 
 - initial release
-
