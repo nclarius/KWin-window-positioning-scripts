@@ -39,7 +39,6 @@ In order for the script to work, you need to have *Active screen follows mouse* 
 
 ```bash
 kwriteconfig5 --file kwinrc --group Windows --key ActiveMouseScreen true
-ActiveMouseScreen=true
 qdbus org.kde.KWin /KWin reconfigure
 ```
 
