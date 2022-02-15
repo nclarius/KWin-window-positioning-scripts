@@ -1,4 +1,1 @@
-- make script automatically enabled after install
-- update package structure
-- add install/uninstall scripts
-- add changelog in BB Code format
+- fix metadata not found

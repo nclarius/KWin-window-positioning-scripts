@@ -1,0 +1,28 @@
+# KWin Script Always Open on Primary Screen
+# (C) 2021 Natalie Clarius <natalie_clarius@yahoo.de>
+# GNU General Public License v3.0
+
+[Desktop Entry]
+Name=Always Open on Primary Screen
+Name[de]=Immer auf primärem Bildschirm öffnen
+Name[nl]=Altijd openen op primair scherm
+Comment=Always opens new windows on the monitor that is set as primary in the display configuration
+Comment[de]=Öffnet neue Fenster immer auf dem in der Display-Konfiguraton als primär eingestellten Monitor
+Comment[nl]=Opent nieuwe vensters altijd op het scherm dat is ingesteld als primair
+Icon=preferences-system-windows
+
+X-KDE-PluginInfo-Name=alwaysopenonprimaryscreen
+X-KDE-PluginInfo-Version=2.5
+X-KDE-PluginInfo-Author=Natalie Clarius
+X-KDE-PluginInfo-Email=natalie_clarius@yahoo.de
+X-KDE-PluginInfo-License=GPL v3.0
+X-KDE-PluginInfo-Website=https://store.kde.org/p/1617641/
+
+Type=Service
+X-Plasma-API=javascript
+X-Plasma-MainScript=code/main.js
+X-KDE-ServiceTypes=KWin/Script,KCModule
+X-KDE-ConfigModule=kwin/effects/configs/kcm_kwin4_genericscripted
+X-KDE-PluginKeyword=alwaysopenonprimaryscreen
+X-KDE-ParentComponents=alwaysopenonprimaryscreen
+X-KDE-PluginInfo-EnabledByDefault=true
