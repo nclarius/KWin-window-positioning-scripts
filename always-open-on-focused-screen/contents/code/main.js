@@ -7,16 +7,17 @@ GNU General Public License v3.0
 // when a client is activated
 focusedScreen = workspace.activeScreen;
 workspace.clientActivated.connect(function(client) {
+    if (!client || client.resourceClass == "plasmashell") return;
     // update focused screen to screen client is on
-    if (client == null || client.specialWindow) return;
     focusedScreen = client.screen;
 });
 
 // when a client is added
 workspace.clientAdded.connect(function(client) {
-    // move client to focused screen
-    if (client == null || client.desktopWindow || client.dock) return;
+    if (!client || client.resourceClass == "plasmashell") return;
     if (client.screen == focusedScreen) return;
+
+    // move client to focused screen
     console.debug("sending client", client.caption, "to focused screen", focusedScreen);
     workspace.sendClientToScreen(client, focusedScreen);
 
