@@ -1,3 +1,6 @@
+## v2.7
+- fix desktop background disappearing
+
 ## v2.6
 - fix metadata not found
 

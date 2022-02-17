@@ -1,1 +1,1 @@
-- fix metadata not found
+- fix desktop background disappearing

@@ -8,8 +8,8 @@ GNU General Public License v3.0
 workspace.clientAdded.connect(function(client) {
     // get active screen
     activeScreen = workspace.activeScreen;
-    
-    if (!client) return;
+
+    if (!client || client.dock || client.desktopWindow) return;
     if (client.screen == activeScreen) return;
 
     // move client to active screen
