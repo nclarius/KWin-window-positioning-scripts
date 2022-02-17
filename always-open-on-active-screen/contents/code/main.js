@@ -6,10 +6,13 @@ GNU General Public License v3.0
 
 // when a client is added
 workspace.clientAdded.connect(function(client) {
+    // get active screen
     activeScreen = workspace.activeScreen;
-    // move client to active screen
-    if (client == null || client.desktopWindow || client.dock) return;
+    
+    if (!client) return;
     if (client.screen == activeScreen) return;
+
+    // move client to active screen
     console.debug("sending client", client.caption, "to active screen", activeScreen);
     workspace.sendClientToScreen(client, activeScreen);
 
