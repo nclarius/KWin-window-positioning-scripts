@@ -1,1 +1,1 @@
-- fix desktop background disappearing
+- remove inappropriate configuration module entry in metadata
