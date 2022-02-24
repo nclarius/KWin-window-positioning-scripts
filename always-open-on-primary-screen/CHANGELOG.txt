@@ -1,1 +1,1 @@
-- fix metadata not found
+- remove inappropriate configuration module entry in metadata
