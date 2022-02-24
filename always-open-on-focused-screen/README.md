@@ -2,7 +2,7 @@
 
 Extension for KDE’s window manager to make new windows always open on the monitor that has the focused window.
 
-![icon](.img/icon_small.png)
+![logo](.img/logo_.png)
 
 
 
