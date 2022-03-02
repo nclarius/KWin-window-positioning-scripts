@@ -26,7 +26,7 @@ cd KWin-window-positioning-scripts/always-open-on-focused-screen
 
 ## Troubleshooting
 
-If some applications still open on the wrong screen, consider disabling *System Settings* > *Window Management* > *Window Behavior* > *Advanced* > *Multiscreen Behavor* > *Allow apps to remember the positions of their own windows, if they support it*.
+If some applications still open on the wrong screen, consider disabling *System Settings* > *Window Management* > *Window Behavior* > *Advanced* > *Window placement* > *Allow apps to remember the positions of their own windows, if they support it*.
 
 
 
