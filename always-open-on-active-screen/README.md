@@ -45,8 +45,7 @@ qdbus org.kde.KWin /KWin reconfigure
 
 ## Troubleshooting
 
-If some applications still open on the wrong screen, consider disabling *System Settings* > *Window Management* > *Window Behavior* > *Advanced* > *Window placement* > *Allow apps to remember the positions of their own windows, if they support it*.
-
+If some applications still open on the wrong screen, consider disabling applications requesting their own window geometry: *System Settings* > *Window Management* > *Window Behavior* > *Advanced* > *Window placement* > *Allow apps to remember the positions of their own windows, if they support it*.
 
 
 ## Small Print
