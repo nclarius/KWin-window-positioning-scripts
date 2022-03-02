@@ -4,21 +4,32 @@ KWin Script Always Open on Focused Screen
 GNU General Public License v3.0
 */
 
-// when a client is activated
+// initialization
+const debugMode = readConfig("debugMode", true);
+function debug(...args) {if (debugMode) 
+    console.debug("alwaysopenonfocusedscreen:", ...args);}
+debug("initializing");
+
+// when a client is activated, update focused screen to screen client is on
 focusedScreen = workspace.activeScreen;
-workspace.clientActivated.connect(function(client) {
+workspace.clientActivated.connect(client => {
     if (!client || client.resourceClass == "plasmashell") return;
-    // update focused screen to screen client is on
     focusedScreen = client.screen;
+    debug("focused screen", activeScreen);
 });
 
 // when a client is added
-workspace.clientAdded.connect(function(client) {
+workspace.clientAdded.connect(client => {
+    debug("client", JSON.stringify(client, undefined, 2));
+
+    // abort if client is null or not a normal window
     if (!client || client.resourceClass == "plasmashell") return;
+
+    // abort if client is already on the right screen
     if (client.screen == focusedScreen) return;
 
     // move client to focused screen
-    console.debug("sending client", client.caption, "to focused screen", focusedScreen);
+    debug("sending client", client.caption, "to focused screen", focusedScreen);
     workspace.sendClientToScreen(client, focusedScreen);
 
     // clip and move client into bounds of screen dimensions
