@@ -1,1 +1,3 @@
 - remove inappropriate configuration module entry in metadata
+- add debug info
+- refactor

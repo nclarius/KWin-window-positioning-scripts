@@ -1,3 +1,8 @@
+## v2.8
+- remove inappropriate configuration module entry in metadata
+- add debug info
+- refactor
+
 ## v2.7
 - fix desktop background disappearing
 

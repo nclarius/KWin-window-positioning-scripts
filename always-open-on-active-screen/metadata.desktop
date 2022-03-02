@@ -12,7 +12,7 @@ Comment[nl]=Opent nieuwe vensters altijd op het scherm met de cursor]
 Icon=preferences-system-windows
 
 X-KDE-PluginInfo-Name=alwaysopenonactivescreen
-X-KDE-PluginInfo-Version=2.7
+X-KDE-PluginInfo-Version=2.8
 X-KDE-PluginInfo-Author=Natalie Clarius
 X-KDE-PluginInfo-Email=natalie_clarius@yahoo.de
 X-KDE-PluginInfo-License=GPL v3.0

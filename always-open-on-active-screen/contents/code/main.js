@@ -4,16 +4,28 @@ KWin Script Always Open on Active Screen
 GNU General Public License v3.0
 */
 
+// initialization
+const debugMode = readConfig("debugMode", true);
+function debug(...args) {if (debugMode) 
+    console.debug("alwaysopenonactivescreen:", ...args);}
+debug("initializing");
+
 // when a client is added
-workspace.clientAdded.connect(function(client) {
+workspace.clientAdded.connect(client => {
+    debug("client", JSON.stringify(client, undefined, 2));
+
     // get active screen
     activeScreen = workspace.activeScreen;
+    debug("active screen", activeScreen);
 
+    // abort if client is null or not a normal window
     if (!client || client.dock || client.desktopWindow) return;
+
+    // abort if client is already on the right screen
     if (client.screen == activeScreen) return;
 
     // move client to active screen
-    console.debug("sending client", client.caption, "to active screen", activeScreen);
+    debug("sending client", client.caption, "to active screen", activeScreen);
     workspace.sendClientToScreen(client, activeScreen);
 
     // clip and move client into bounds of screen dimensions
