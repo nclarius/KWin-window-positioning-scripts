@@ -4,16 +4,27 @@ KWin Script Always Open on Primary Screen
 GNU General Public License v3.0
 */
 
+// initialization
+const debugMode = readConfig("debugMode", true);
+function debug(...args) {if (debugMode) 
+    console.debug("alwaysopenonprimaryscreen:", ...args);}
+debug("initializing");
+
 // primary screen is 0'th
 primaryScreen = 0;
 
 // when a client is added
-workspace.clientAdded.connect(function(client) {
+workspace.clientAdded.connect(client => {
+    debug("client", JSON.stringify(client, undefined, 2));
+
+    // abort if client is null or not a normal window
     if (!client || client.resourceClass == "plasmashell" || client.resourceClass == "krunner") return;
+
+    // abort if client is already on the right screen
     if (client.screen == primaryScreen) return;
 
     // move client to primary screen
-    console.debug("sending client", client.caption, "to primary screen", primaryScreen);
+    debug("sending client", client.caption, "to primary screen", primaryScreen);
     workspace.sendClientToScreen(client, primaryScreen);
 
     // clip and move client into bounds of screen dimensions
