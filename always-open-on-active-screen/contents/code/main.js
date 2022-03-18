@@ -16,7 +16,6 @@ workspace.clientAdded.connect(client => {
 
     // get active screen
     activeScreen = workspace.activeScreen;
-    debug("active screen", activeScreen);
 
     // abort if client is null or not a normal window
     if (!client || client.dock || client.desktopWindow) return;
