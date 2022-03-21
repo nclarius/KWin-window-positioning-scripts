@@ -14,7 +14,8 @@ Extension for KDE’s window manager to make new windows always open on the moni
 
 ### Installation via graphical interface
 
-*System Settings* > *Window Management* > *KWin Scripts* > *Get New Scripts …* > search for *Always Open on Primary Screen* > *Install*.
+1. Install the script via *System Settings* > *Window Management* > *KWin Scripts* > *Get New Scripts …* > search for *Always Open on Primary Screen* > *Install*.
+2. Enable the script by activating its checkbox, and apply the settings.
 
 ### Installation via command line
 
