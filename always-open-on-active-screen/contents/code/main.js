@@ -17,11 +17,11 @@ workspace.clientAdded.connect(client => {
     // get active screen
     activeScreen = workspace.activeScreen;
 
-    // abort if client is null or not a normal window
-    if (!client || client.dock || client.desktopWindow) return;
-
-    // abort if client is already on the right screen
-    if (client.screen == activeScreen) return;
+    // abort if client is null, not regeometrizable, or already on right screen
+    if (!client
+     || !(client.resizeable && client.moveable && client.moveableAcrossScreens)
+     || client.screen == activeScreen)
+         return;
 
     // move client to active screen
     debug("sending client", client.caption, "to active screen", activeScreen);
