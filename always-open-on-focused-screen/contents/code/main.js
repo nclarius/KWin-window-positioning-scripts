@@ -22,11 +22,11 @@ workspace.clientActivated.connect(client => {
 workspace.clientAdded.connect(client => {
     debug("client", JSON.stringify(client, undefined, 2));
 
-    // abort if client is null or not a normal window
-    if (!client || client.resourceClass == "plasmashell") return;
-
-    // abort if client is already on the right screen
-    if (client.screen == focusedScreen) return;
+    // abort if client is null, not regeometrizable, or already on right screen
+    if (!client
+     || !(client.resizeable && client.moveable && client.moveableAcrossScreens)
+     || client.screen == focusedScreen)
+            return;
 
     // move client to focused screen
     debug("sending client", client.caption, "to focused screen", focusedScreen);
