@@ -1,3 +1,6 @@
+# v3.0
+- better compatibility with Wayland
+
 ## v2.7
 - remove inappropriate configuration module entry in metadata
 - add debug info

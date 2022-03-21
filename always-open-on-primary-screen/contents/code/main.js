@@ -17,11 +17,11 @@ primaryScreen = 0;
 workspace.clientAdded.connect(client => {
     debug("client", JSON.stringify(client, undefined, 2));
 
-    // abort if client is null or not a normal window
-    if (!client || client.resourceClass == "plasmashell" || client.resourceClass == "krunner") return;
-
-    // abort if client is already on the right screen
-    if (client.screen == primaryScreen) return;
+    // abort if client is null, not regeometrizable, or already on right screen
+    if (!client
+     || !(client.resizeable && client.moveable && client.moveableAcrossScreens)
+     || client.screen == primaryScreen)
+         return;
 
     // move client to primary screen
     debug("sending client", client.caption, "to primary screen", primaryScreen);
