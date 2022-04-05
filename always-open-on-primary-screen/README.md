@@ -27,8 +27,7 @@ cd KWin-window-positioning-scripts/always-open-on-primary-screen
 
 ## Troubleshooting and known issues
 
-- If you are on X11 and some applications still open on the wrong screen, consider disabling applications requesting their own window geometry: *System Settings* > *Window Management* > *Window Behavior* > *Advanced* > *Window placement* > *Allow apps to remember the positions of their own windows, if they support it*.  
-
+- If some applications still open on the wrong screen, consider disabling applications requesting their own window geometry (this features only exists on X11): *System Settings* > *Window Management* > *Window Behavior* > *Advanced* > *Window placement* > *Allow apps to remember the positions of their own windows, if they support it*.  
 - Notifications do not follow the placement request. The only thing that can be done about this at the moment is to leave a vote at the [bug report](https://bugs.kde.org/show_bug.cgi?id=452294) for this to be addressed in core Plasma.
 
 - Some applications (e.g. Spotify) may still open on the wrong screen despite these workarounds. I have not yet figured out how to fix this. If you do, please let me know!
