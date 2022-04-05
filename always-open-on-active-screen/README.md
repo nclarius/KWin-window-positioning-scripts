@@ -5,8 +5,6 @@ Extension for KDE’s window manager to make new windows always open on the moni
 ![logo](.img/logo_.png)
 
 
-
-
 ## Installation
 
 ### Dependencies
@@ -25,7 +23,6 @@ git clone https://github.com/nclarius/KWin-window-positioning-scripts.git
 cd KWin-window-positioning-scripts/always-open-on-active-screen
 ./install.sh
 ```
-
 
 
 ## Set-up
