@@ -5,7 +5,6 @@ Extension for KDE’s window manager to make new windows always open on the moni
 ![logo](.img/logo_.png)
 
 
-
 ## Installation
 
 ### Dependencies
