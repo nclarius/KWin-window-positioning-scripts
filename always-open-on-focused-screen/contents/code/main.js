@@ -12,7 +12,7 @@ debug("initializing");
 
 // read config
 const config = {
-    classlist: readConfig("classlist", "").toLowerCase().split("\n"),
+    classlist: readConfig("classlist", "").toLowerCase().split("\n").map(s => s.trim()),
     allowmode: readConfig("allowmode", false),
     denymode: readConfig("denymode", true),
 };
