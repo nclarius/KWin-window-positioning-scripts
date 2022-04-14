@@ -10,6 +10,13 @@ function debug(...args) {if (debugMode)
     console.debug("alwaysopenonprimaryscreen:", ...args);}
 debug("initializing");
 
+// read config
+const config = {
+    classlist: readConfig("classlist", "").toLowerCase().split("\n"),
+    allowmode: readConfig("allowmode", false),
+    denymode: readConfig("denymode", true),
+};
+
 // primary screen is 0'th
 primaryScreen = 0;
 
@@ -19,9 +26,11 @@ workspace.clientAdded.connect(client => {
 
     // abort if client is null, not regeometrizable, or already on right screen
     if (!client
-     || !(client.resizeable && client.moveable && client.moveableAcrossScreens)
-     || client.screen == primaryScreen)
-         return;
+        || (config.denymode && config.classlist.includes(String(client.resourceClass)))     // using denymode and window class is in list
+        || (config.allowmode && !config.classlist.includes(String(client.resourceClass)))   // using allowmode and window class is not in list
+        || !(client.resizeable && client.moveable && client.moveableAcrossScreens)
+        || client.screen == primaryScreen)
+        return;
 
     // move client to primary screen
     debug("sending client", client.caption, "to primary screen", primaryScreen);
