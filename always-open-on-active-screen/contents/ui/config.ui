@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AlwaysOpenOnActiveScreenConfigForm</class>
+ <widget class="QWidget" name="AlwaysOpenOnActiveScreenConfigForm">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>451</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLabel" name="label">
+     <property name="whatsThis">
+      <string notr="true">Effected window class names. One per line</string>
+     </property>
+     <property name="text">
+      <string notr="true">Effected window class names. One per line</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPlainTextEdit" name="kcfg_classlist"/>
+   </item>
+   <item>
+    <widget class="QSplitter" name="splitter">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <widget class="QRadioButton" name="kcfg_allowmode">
+      <property name="text">
+       <string notr="true">Allow matching windows</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">matchTypeGroup</string>
+      </attribute>
+     </widget>
+     <widget class="QRadioButton" name="kcfg_denymode">
+      <property name="text">
+       <string notr="true">Deny matching windows</string>
+      </property>
+      <attribute name="buttonGroup">
+       <string notr="true">matchTypeGroup</string>
+      </attribute>
+     </widget>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+ <buttongroups>
+  <buttongroup name="matchTypeGroup"/>
+ </buttongroups>
+</ui>

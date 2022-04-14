@@ -10,6 +10,13 @@ function debug(...args) {if (debugMode)
     console.debug("alwaysopenonactivescreen:", ...args);}
 debug("initializing");
 
+// read config
+const config = {
+    classlist: readConfig("classlist", "").toLowerCase().split("\n"),
+    allowmode: readConfig("allowmode", false),
+    denymode: readConfig("denymode", true),
+};
+
 // when a client is added
 workspace.clientAdded.connect(client => {
     debug("client", JSON.stringify(client, undefined, 2));
@@ -19,9 +26,12 @@ workspace.clientAdded.connect(client => {
 
     // abort if client is null, not regeometrizable, or already on right screen
     if (!client
-     || !(client.resizeable && client.moveable && client.moveableAcrossScreens)
-     || client.screen == activeScreen)
-         return;
+        || (config.denymode && config.classlist.includes(String(client.resourceClass)))     // using denymode and window class is in list
+        || (config.allowmode && !config.classlist.includes(String(client.resourceClass)))   // using allowmode and window class is not in list
+        || !(client.resizeable && client.moveable && client.moveableAcrossScreens)
+        || !(client.resizeable && client.moveable && client.moveableAcrossScreens)
+        || client.screen == activeScreen)
+        return;
 
     // move client to active screen
     debug("sending client", client.caption, "to active screen", activeScreen);
