@@ -28,8 +28,8 @@ cd KWin-window-positioning-scripts/always-open-on-primary-screen
 ## Troubleshooting and known issues
 
 - If some applications still open on the wrong screen, consider disabling applications requesting their own window geometry (this features only exists on X11): *System Settings* > *Window Management* > *Window Behavior* > *Advanced* > *Window placement* > *Allow apps to remember the positions of their own windows, if they support it*.  
-- Some XWayland applications may attempt to remember their window position; this can be prevented with a window rule as suggested [here](https://github.com/nclarius/KWin-window-positioning-scripts/issues/11#issuecomment-1091979196): *System Settings* > *Window Management* > *Window Rules* > *Add New...* > enter the window class of the application and  possibly restrict the window type to normal windows > *Add Property..* > *Ignore requested geometry* > *Force*, *Yes* > Apply.  
-- It has been suggested that the script might not work for snap applications; if this appears to be the case for you, consider using native packages instead.  
+- Some XWayland applications may attempt to remember their window position; this can be prevented with a window rule, as suggested [here](https://github.com/nclarius/KWin-window-positioning-scripts/issues/11#issuecomment-1091979196): *System Settings* > *Window Management* > *Window Rules* > *Add New...* > enter the window class of the application and  possibly restrict the window type to normal windows > *Add Property..* > *Ignore requested geometry* > *Force*, *Yes* > *Apply*.  
+- - It has been suggested that the script might not work for snap applications; if this appears to be the case for you, consider using native packages instead.  
 - For notifications to appear on the primary screen, make sure you have the notification applet present and enabled on your primary screen, and not present or disabled on any secondary screens.  
 - Some applications (e.g. Spotify) may still open on the wrong screen despite these workarounds. I have not yet figured out how to fix this. If you do, please let me know!
 
