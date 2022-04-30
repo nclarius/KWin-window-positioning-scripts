@@ -5,17 +5,20 @@ GNU General Public License v3.0
 */
 
 // initialization
-const debugMode = readConfig("debugMode", false);
-function debug(...args) {if (debugMode) 
-    console.debug("alwaysopenonfocusedscreen:", ...args);}
-debug("initializing");
-
-// read config
 const config = {
-    classlist: readConfig("classlist", "").toLowerCase().split("\n").map(s => s.trim()),
+    classlist: readConfig("classlist", "")
+      .toLowerCase()
+      .split("\n")
+      .map((s) => s.trim()),
     allowmode: readConfig("allowmode", false),
     denymode: readConfig("denymode", true),
-};
+    debugmode: readConfig("debugMode", false),
+  };
+
+  function debug(...args) {
+    if (config.debugmode) console.debug("alwaysopenonfocusedscreen:", ...args);
+  }
+  debug("initializing");
 
 // when a client is activated, update focused screen to screen client is on
 focusedScreen = workspace.activeScreen;

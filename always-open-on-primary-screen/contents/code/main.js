@@ -5,17 +5,20 @@ GNU General Public License v3.0
 */
 
 // initialization
-const debugMode = readConfig("debugMode", false);
-function debug(...args) {if (debugMode) 
-    console.debug("alwaysopenonprimaryscreen:", ...args);}
-debug("initializing");
-
-// read config
 const config = {
-    classlist: readConfig("classlist", "").toLowerCase().split("\n").map(s => s.trim()),
+    classlist: readConfig("classlist", "")
+      .toLowerCase()
+      .split("\n")
+      .map((s) => s.trim()),
     allowmode: readConfig("allowmode", false),
     denymode: readConfig("denymode", true),
-};
+    debugmode: readConfig("debugMode", false),
+  };
+
+  function debug(...args) {
+    if (config.debugmode) console.debug("alwaysopenonprimaryscreen:", ...args);
+  }
+  debug("initializing");
 
 // primary screen is 0'th
 primaryScreen = 0;
