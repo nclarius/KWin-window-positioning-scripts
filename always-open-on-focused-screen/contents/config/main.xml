@@ -15,7 +15,7 @@
     <entry name="denymode" type="Bool">
       <default>true</default>
     </entry>
-    <entry name="debugMode" type="bool">
+    <entry name="debugMode" type="Bool">
       <label>Whether to log debug information</label>
       <default>false</default>
     </entry>
