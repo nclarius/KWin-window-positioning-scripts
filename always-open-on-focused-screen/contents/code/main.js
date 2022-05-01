@@ -5,10 +5,20 @@ GNU General Public License v3.0
 */
 
 // initialization
-const debugMode = readConfig("debugMode", true);
-function debug(...args) {if (debugMode) 
-    console.debug("alwaysopenonfocusedscreen:", ...args);}
-debug("initializing");
+const config = {
+    classlist: readConfig("classlist", "")
+      .toLowerCase()
+      .split("\n")
+      .map((s) => s.trim()),
+    allowmode: readConfig("allowmode", false),
+    denymode: readConfig("denymode", true),
+    debugmode: readConfig("debugMode", false),
+  };
+
+  function debug(...args) {
+    if (config.debugmode) console.debug("alwaysopenonfocusedscreen:", ...args);
+  }
+  debug("initializing");
 
 // when a client is activated, update focused screen to screen client is on
 focusedScreen = workspace.activeScreen;
@@ -24,9 +34,11 @@ workspace.clientAdded.connect(client => {
 
     // abort if client is null, not regeometrizable, or already on right screen
     if (!client
-     || !(client.resizeable && client.moveable && client.moveableAcrossScreens)
-     || client.screen == focusedScreen)
-            return;
+        || (config.denymode && config.classlist.includes(String(client.resourceClass)))     // using denymode and window class is in list
+        || (config.allowmode && !config.classlist.includes(String(client.resourceClass)))   // using allowmode and window class is not in list
+        || !(client.resizeable && client.moveable && client.moveableAcrossScreens)
+        || client.screen == focusedScreen)
+        return;
 
     // move client to focused screen
     debug("sending client", client.caption, "to focused screen", focusedScreen);
