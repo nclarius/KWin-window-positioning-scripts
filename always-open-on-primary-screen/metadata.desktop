@@ -25,4 +25,3 @@ X-KDE-ServiceTypes=KWin/Script,KCModule
 X-KDE-ConfigModule=kwin/effects/configs/kcm_kwin4_genericscripted
 X-KDE-PluginKeyword=alwaysopenonprimaryscreen
 X-KDE-ParentComponents=alwaysopenonprimaryscreen
-X-KDE-PluginInfo-EnabledByDefault=true
