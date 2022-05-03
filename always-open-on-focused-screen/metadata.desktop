@@ -12,7 +12,7 @@ Comment[nl]=Open nieuwe vensters altijd op het scherm met een gefocust venster
 Icon=preferences-system-windows
 
 X-KDE-PluginInfo-Name=alwaysopenonfocusedscreen
-X-KDE-PluginInfo-Version=3.0
+X-KDE-PluginInfo-Version=4.0
 X-KDE-PluginInfo-Author=Natalie Clarius
 X-KDE-PluginInfo-Email=natalie_clarius@yahoo.de
 X-KDE-PluginInfo-License=GPL v3.0
@@ -25,4 +25,3 @@ X-KDE-ServiceTypes=KWin/Script,KCModule
 X-KDE-ConfigModule=kwin/effects/configs/kcm_kwin4_genericscripted
 X-KDE-PluginKeyword=alwaysopenonfocusedscreen
 X-KDE-ParentComponents=alwaysopenonfocusedscreen
-X-KDE-PluginInfo-EnabledByDefault=true
