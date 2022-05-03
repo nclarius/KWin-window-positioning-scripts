@@ -1,6 +1,9 @@
 # v4.0
 - add configuration to include/exclude windows by application
 
+# v4.0
+- add configuration to include/exclude windows by application
+
 # v3.0
 - better compatibility with Wayland
 
