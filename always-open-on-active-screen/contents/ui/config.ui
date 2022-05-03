@@ -1,73 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>AlwaysOpenOnActiveScreenConfigForm</class>
- <widget class="QWidget" name="AlwaysOpenOnActiveScreenConfigForm">
-  <property name="geometry">
-   <rect>
-    <x>0</x>
-    <y>0</y>
-    <width>400</width>
-    <height>451</height>
-   </rect>
-  </property>
-  <property name="windowTitle">
-   <string>Form</string>
-  </property>
-  <layout class="QVBoxLayout" name="verticalLayout">
-   <item>
-    <widget class="QLabel" name="label">
-     <property name="whatsThis">
-      <string notr="true">Effected window class names. One per line</string>
-     </property>
-     <property name="text">
-      <string notr="true">Effected window class names. One per line</string>
-     </property>
+    <class>AlwaysOpenOnActiveScreenConfigForm</class>
+    <widget class="QWidget" name="AlwaysOpenOnActiveScreenConfigForm">
+        <property name="geometry">
+            <rect>
+                <x>0</x>
+                <y>0</y>
+                <width>400</width>
+                <height>451</height>
+            </rect>
+        </property>
+        <property name="windowTitle">
+            <string>Always Open on Active Screen</string>
+        </property>
+        <layout class="QVBoxLayout" name="verticalLayout">
+            <item>
+                <widget class="QLabel" name="label_1">
+                    <property name="text">
+                        <string>Apply to windows belonging to</string>
+                    </property>
+                </widget>
+            </item>
+            <item>
+                <widget class="QSplitter" name="splitter">
+                    <property name="sizePolicy">
+                        <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                            <horstretch>0</horstretch>
+                            <verstretch>0</verstretch>
+                        </sizepolicy>
+                    </property>
+                    <property name="orientation">
+                        <enum>Qt::Horizontal</enum>
+                    </property>
+                    <widget class="QRadioButton" name="kcfg_allowMode">
+                        <property name="text">
+                            <string notr="true">all except the follwing</string>
+                        </property>
+                        <attribute name="buttonGroup">
+                            <string notr="true">matchTypeGroup</string>
+                        </attribute>
+                    </widget>
+                    <widget class="QRadioButton" name="kcfg_denyMode">
+                        <property name="text">
+                            <string notr="true">none except the following</string>
+                        </property>
+                        <attribute name="buttonGroup">
+                            <string notr="true">matchTypeGroup</string>
+                        </attribute>
+                    </widget>
+                </widget>
+            </item>
+            <item>
+                <widget class="QLabel" name="label_2">
+                    <property name="text">
+                        <string>applications:</string>
+                    </property>
+                </widget>
+            </item>
+            <item>
+                <widget class="QPlainTextEdit" name="kcfg_classList">
+                    <property name="placeholderText">
+                        <string>List of window classes (example: dolphin), one per line</string>
+                    </property>
+                </widget>
+            </item>
+        </layout>
     </widget>
-   </item>
-   <item>
-    <widget class="QPlainTextEdit" name="kcfg_classlist"/>
-   </item>
-   <item>
-    <widget class="QSplitter" name="splitter">
-     <property name="sizePolicy">
-      <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-       <horstretch>0</horstretch>
-       <verstretch>0</verstretch>
-      </sizepolicy>
-     </property>
-     <property name="orientation">
-      <enum>Qt::Horizontal</enum>
-     </property>
-     <widget class="QRadioButton" name="kcfg_allowmode">
-      <property name="text">
-       <string notr="true">Allow matching windows</string>
-      </property>
-      <attribute name="buttonGroup">
-       <string notr="true">matchTypeGroup</string>
-      </attribute>
-     </widget>
-     <widget class="QRadioButton" name="kcfg_denymode">
-      <property name="text">
-       <string notr="true">Deny matching windows</string>
-      </property>
-      <attribute name="buttonGroup">
-       <string notr="true">matchTypeGroup</string>
-      </attribute>
-     </widget>
-    </widget>
-   </item>
-   <item>
-    <widget class="QCheckBox" name="kcfg_debugMode">
-     <property name="text">
-      <string notr="true">DebugMode</string>
-     </property>
-    </widget>
-   </item>
-  </layout>
- </widget>
- <resources/>
- <connections/>
- <buttongroups>
-  <buttongroup name="matchTypeGroup"/>
- </buttongroups>
+    <resources />
+    <connections />
+    <buttongroups>
+        <buttongroup name="matchTypeGroup" />
+    </buttongroups>
 </ui>

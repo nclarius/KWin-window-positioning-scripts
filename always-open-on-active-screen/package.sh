@@ -19,11 +19,7 @@ changes_bb='[list]\n'"$(cat CHANGELOG.txt | sed 's/- /[*] /g')"$'\n[/list]'
 echo "$caption_bb"$'\n'"$changes_bb"$'\n\n'"$(cat CHANGELOG.bbcode)" > "CHANGELOG.bbcode"
 echo 'generated changelog bbcode'
 
-# generate GitHub release
-gh release create "${name}"'_v'"${version}" -F CHANGELOG.txt
-echo 'generated GitHub release'
-
-# generate KDE store release
+# generate kwinscript package
 find . -name "*.kwinscript" -type f -delete
 zip -rq "${name}"'_v'"${version}"'.kwinscript'  \
 	contents \
@@ -35,12 +31,16 @@ zip -rq "${name}"'_v'"${version}"'.kwinscript'  \
 	CHANGELOG.md \
 	CHANGELOG.bbcode \
 	LICENSE
-echo 'generated KDE Store release'
+echo 'generated kwinscript package'
 
 # commit changes to GitHub
 git add .
 git commit -q -m "$(paste -sd '; ' CHANGELOG.txt | sed 's/- / /g')"
 git push -q
 echo 'commited changes to git'
+
+# generate GitHub release
+gh release create "${name}"'_v'"${version}" -F CHANGELOG.txt "${name}"'_v'"${version}"'.kwinscript'
+echo 'generated GitHub release'
 
 echo 'done'
