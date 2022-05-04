@@ -36,13 +36,11 @@ You may need to uncheck the checkbox for the script, apply the settings, recheck
 In Plasma versions < 5.24, a bug in the KWin scripting system [[1]](https://bugs.kde.org/show_bug.cgi?id=411430) [[2]](https://bugs.kde.org/show_bug.cgi?id=444378) may cause the configuration not to be found. To fix this, please execute the following commands in a terminal:
 
 ```bash
-sed -i 's/ConfigModule/Library/g' ~/.local/share/kwin/scripts/tilegaps/metadata.desktop
+sed -i 's/ConfigModule/Library/g' ~/.local/share/kwin/scripts/alwaysopenfocusedscreen/metadata.desktop
 mkdir -p ~/.local/share/kservices5/
-ln -sf ~/.local/share/kwin/scripts/tilegaps/metadata.desktop ~/.local/share/kservices5/tilegaps.desktop
+ln -sf ~/.local/share/kwin/scripts/alwaysopenfocusedscreen/metadata.desktop ~/.local/share/kservices5/alwaysopenfocusedscreen.desktop
 qdbus org.kde.KWin /KWin reconfigure
 ```
-
-### Window class
 
 To find the window class name of an application: Right-click on the titlebar of a window of the application > *More Actions* > *Configure Special Application Settings...* > the pre-filled entry in *Window class (application)* (if it consists of two words, only the second part) is the window class to put in the script configuration.
 
