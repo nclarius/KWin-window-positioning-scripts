@@ -15,12 +15,13 @@ The windows to be affected can be filtered by application.
 
 ### Installation via graphical interface
 
-1. Install the script via *System Settings* > *Window Management* > *KWin Scripts* > *Get New Scripts …* > search for *Always Open on Primary Screen* > *Install*.
-2. Enable the script by activating its checkbox, and apply the settings.
-
 Please make sure to select the most recent version (v4.0).
 
 A [bug](https://bugs.kde.org/show_bug.cgi?id=453521) in Discover cauases a wrong version to be installed, so using System Settings instead is recommended.
+
+1. Install the script via *System Settings* > *Window Management* > *KWin Scripts* > *Get New Scripts …* > search for *Always Open on Primary Screen* > *Install*.
+2. Enable the script by activating its checkbox, and apply the settings.
+
 
 ### Installation via command line
 
