@@ -15,7 +15,7 @@ The windows to be affected can be filtered by application.
 
 ### Installation via graphical interface
 
-1. Install the script via Discover or *System Settings* > *Window Management* > *KWin Scripts* > *Get New Scripts …* > search for *Always Open on Active Screen* > *Install*.
+1. Install the script via *System Settings* > *Window Management* > *KWin Scripts* > *Get New Scripts …* > search for *Always Open on Active Screen* > *Install*.
 2. Enable the script by activating its checkbox, and apply the settings.
 
 ### Installation via command line
