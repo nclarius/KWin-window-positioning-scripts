@@ -40,11 +40,9 @@ workspace.clientAdded.connect(client => {
     workspace.sendClientToScreen(client, primaryScreen);
 
     // clip and move client into bounds of screen dimensions
-    var area = workspace.clientArea(KWin.MaximizeArea, client);
-    // window width/height maximally screen width/height
-    client.geometry.width = Math.min(client.width, area.width);
-    client.geometry.height = Math.min(client.height, area.height);
-    // left/top window edge between left and right/top and bottom screen edges
+    const area = workspace.clientArea(KWin.MaximizeArea, client);
+    client.geometry.width = Math.min(area.width, client.width);
+    client.geometry.height = Math.min(area.height, client.height);
     client.geometry.x = Math.max(area.x, Math.min(area.x + area.width - client.width, client.x));
     client.geometry.y = Math.max(area.y, Math.min(area.y + area.height - client.height, client.y));
 });
