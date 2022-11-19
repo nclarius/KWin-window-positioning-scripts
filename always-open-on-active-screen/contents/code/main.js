@@ -19,6 +19,7 @@ const config = {
     if (config.debugMode) console.debug("alwaysopenonactivescreen:", ...args);
   }
   debug("initializing");
+  debug("config:", config.allowMode ? "allow" : "deny", "list", config.classList);
 
 // when a client is added
 workspace.clientAdded.connect(client => {
@@ -29,8 +30,8 @@ workspace.clientAdded.connect(client => {
 
     // abort conditions
     if (!client // null
-        || (config.allowMode && !config.classList.includes(String(client.resourceClass))) // using allowmode and window class is not in list
-        || (config.denyMode && config.classList.includes(String(client.resourceClass)))  // using denymode and window class is in list
+        || (config.allowMode && config.classList.includes(String(client.resourceClass))) // using allowmode and window class is in list
+        || (config.denyMode && !config.classList.includes(String(client.resourceClass))) // using denymode and window class is not in list
         || !(client.resizeable && client.moveable && client.moveableAcrossScreens) // not regeomtrizable
         || client.screen == activeScreen) // already on right screen
         return;
