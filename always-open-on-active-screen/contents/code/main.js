@@ -33,6 +33,8 @@ workspace.clientAdded.connect(client => {
         || (config.allowMode && config.classList.includes(String(client.resourceClass))) // using allowmode and window class is in list
         || (config.denyMode && !config.classList.includes(String(client.resourceClass))) // using denymode and window class is not in list
         || !(client.resizeable && client.moveable && client.moveableAcrossScreens) // not regeomtrizable
+        && !(client.caption == "Plasma" && client.resourceClass == "plasmashell" && 
+             client.normalWindow && client.frameGeometry == workspace.clientArea(KWin.MaximizeArea, client)) // except kickerdash
         || client.screen == activeScreen) // already on right screen
         return;
 
