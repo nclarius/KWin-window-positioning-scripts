@@ -1,3 +1,8 @@
+# v5.0
+- fix include/exlude list not working correctly
+- port to JSON format for metadata
+- small code refactors
+
 # v4.0
 - add configuration to include/exclude windows by application
 

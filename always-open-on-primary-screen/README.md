@@ -11,14 +11,14 @@ The windows to be affected can be filtered by application.
 
 ### Dependencies
 
-`kwin` (tested with v5.22 - v5.24 on X11).
+`kwin` (tested with the current version). 
 
 ### Installation via graphical interface
 
 1. Install the script via *System Settings* > *Window Management* > *KWin Scripts* > *Get New Scripts …* > search for *Always Open on Primary Screen* > *Install*.
 2. Enable the script by activating its checkbox, and apply the settings.
 
-Please make sure to select the most recent version (v4.0).
+Please make sure to select the most recent version.
 
 A [bug](https://bugs.kde.org/show_bug.cgi?id=453521) in Discover cauases a wrong version to be installed, so using System Settings instead is recommended.
 
@@ -40,9 +40,9 @@ You may need to uncheck the checkbox for the script, apply the settings, recheck
 In Plasma versions < 5.24, a bug in the KWin scripting system [[1]](https://bugs.kde.org/show_bug.cgi?id=411430) [[2]](https://bugs.kde.org/show_bug.cgi?id=444378) may cause the configuration not to be found. To fix this, please execute the following commands in a terminal:
 
 ```bash
-sed -i 's/ConfigModule/Library/g' ~/.local/share/kwin/scripts/alwaysopenonprimaryscreen/metadata.desktop
+sed -i 's/ConfigModule/Library/g' ~/.local/share/kwin/scripts/alwaysopenonprimaryscreen/metadata.json
 mkdir -p ~/.local/share/kservices5/
-ln -sf ~/.local/share/kwin/scripts/alwaysopenonprimaryscreen/metadata.desktop ~/.local/share/kservices5/alwaysopenonprimaryscreen.desktop
+ln -sf ~/.local/share/kwin/scripts/alwaysopenonprimaryscreen/metadata.json ~/.local/share/kservices5/alwaysopenonprimaryscreen.json
 qdbus org.kde.KWin /KWin reconfigure
 ```
 

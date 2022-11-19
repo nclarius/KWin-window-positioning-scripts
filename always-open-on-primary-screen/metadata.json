@@ -1,0 +1,32 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "natalie_clarius@yahoo.de",
+                "Name": "Natalie Clarius"
+            }
+        ],
+        "Description": "Always opens new windows on the monitor that is set as primary in the display configuration",
+        "Description[de]": "Öffnet neue Fenster immer auf dem in der Display-Konfiguraton als primär eingestellten Monitor",
+        "Description[nl]": "Opent nieuwe vensters altijd op het scherm dat is ingesteld als primair",
+        "Icon": "preferences-system-windows",
+        "Id": "alwaysopenonprimaryscreen",
+        "License": "GPLv3.0",
+        "Name": "Always Open on Primary Screen",
+        "Name[de]": "Immer auf primärem Bildschirm öffnen",
+        "Name[nl]": "Altijd openen op primair scherm",
+        "ServiceTypes": [
+            "KWin/Script",
+            "KCModule"
+        ],
+        "Version": "5.0",
+        "Website": "https://store.kde.org/p/1617641/"
+    },
+    "X-KDE-ConfigModule": "kwin/effects/configs/kcm_kwin4_genericscripted",
+    "X-KDE-ParentComponents": [
+        "alwaysopenonprimaryscreen"
+    ],
+    "X-KDE-PluginKeyword": "alwaysopenonprimaryscreen",
+    "X-Plasma-API": "javascript",
+    "X-Plasma-MainScript": "code/main.js"
+}

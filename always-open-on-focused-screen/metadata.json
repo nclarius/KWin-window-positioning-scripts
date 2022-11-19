@@ -1,0 +1,32 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "natalie_clarius@yahoo.de",
+                "Name": "Natalie Clarius"
+            }
+        ],
+        "Description": "Always opens new windows on the monitor that has the focused window",
+        "Description[de]": "Öffnet neue Fenster immer auf dem Bildschirm mit dem fokussierten Fenster",
+        "Description[nl]": "Open nieuwe vensters altijd op het scherm met een gefocust venster",
+        "Icon": "preferences-system-windows",
+        "Id": "alwaysopenonfocusedscreen",
+        "License": "GPLv3.0",
+        "Name": "Always Open on Focused Screen",
+        "Name[de]": "Immer auf fokussiertem Bildschirm öffnen",
+        "Name[nl]": "Altijd openen op gefocust scherm",
+        "ServiceTypes": [
+            "KWin/Script",
+            "KCModule"
+        ],
+        "Version": "5.0",
+        "Website": "https://store.kde.org/p/1618008/"
+    },
+    "X-KDE-ConfigModule": "kwin/effects/configs/kcm_kwin4_genericscripted",
+    "X-KDE-ParentComponents": [
+        "alwaysopenonfocusedscreen"
+    ],
+    "X-KDE-PluginKeyword": "alwaysopenonfocusedscreen",
+    "X-Plasma-API": "javascript",
+    "X-Plasma-MainScript": "code/main.js"
+}
