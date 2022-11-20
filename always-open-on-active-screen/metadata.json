@@ -1,0 +1,32 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "natalie_clarius@yahoo.de",
+                "Name": "Natalie Clarius"
+            }
+        ],
+        "Description": "Always opens new windows on the monitor that has the mouse cursor",
+        "Description[de]": "Öffnet neue Fenster immer auf dem Monitor mit dem Mauszeiger",
+        "Description[nl]": "Opent nieuwe vensters altijd op het scherm met de cursor]",
+        "Icon": "preferences-system-windows",
+        "Id": "alwaysopenonactivescreen",
+        "License": "GPLv3.0",
+        "Name": "Always Open on Active Screen",
+        "Name[de]": "Immer auf aktivem Bildschirm öffnen",
+        "Name[nl]": "Altijd openen op actief scherm",
+        "ServiceTypes": [
+            "KWin/Script",
+            "KCModule"
+        ],
+        "Version": "5.0",
+        "Website": "https://store.kde.org/p/1617640/"
+    },
+    "X-KDE-ConfigModule": "kwin/effects/configs/kcm_kwin4_genericscripted",
+    "X-KDE-ParentComponents": [
+        "alwaysopenonactivescreen"
+    ],
+    "X-KDE-PluginKeyword": "alwaysopenonactivescreen",
+    "X-Plasma-API": "javascript",
+    "X-Plasma-MainScript": "code/main.js"
+}
