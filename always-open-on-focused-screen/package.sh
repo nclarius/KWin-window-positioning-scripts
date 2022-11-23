@@ -23,7 +23,7 @@ echo 'generated changelog bbcode'
 find . -name "*.kwinscript" -type f -delete
 zip -rq "${name}"'_v'"${version}"'.kwinscript'  \
 	contents \
-	metadata.desktop \
+	metadata.json \
     install.sh \
     uninstall.sh \
     README.md \
